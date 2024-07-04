@@ -11,8 +11,8 @@ $mainErrorMessages = array();
 
 // Start of main validation
 $statement = $conn -> prepare(
-   "SELECT COUNT(*) 
-    FROM users 
+   "SELECT COUNT(*)
+    FROM users
     WHERE email = ?");
 $statement -> bind_param("s", $email);
 $statement -> execute();
@@ -25,7 +25,7 @@ if ($emailCount > 0) {
 
 $statement = $conn -> prepare(
    "SELECT COUNT(*)
-    FROM users 
+    FROM users
     WHERE username = ?");
 $statement -> bind_param("s", $username);
 $statement -> execute();
@@ -92,12 +92,13 @@ if (!empty($errorMessages)) {
 }
 
 $hashedUserEmail = hash('sha256', $email);
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 $statement = $conn -> prepare(
-   "INSERT 
-    INTO users (email, password, username, birthdate, hash) 
+   "INSERT
+    INTO users (email, password, username, birthdate, hash)
     VALUES (?, ?, ?, ?, ?)");
-$statement -> bind_param("sssss", $email, $password, $username, $birthdate, $hashedUserEmail);
+$statement -> bind_param("sssss", $email, $hashedPassword, $username, $birthdate, $hashedUserEmail);
 
 if ($statement -> execute()) {
     $response = array(

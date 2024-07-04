@@ -1,0 +1,20 @@
+#flashes {
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    margin: 1rem;
+    width: fit-content;
+    pointer-events: none;
+    background-color: #ffffff00;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.message {
+    background-color: var(--accent);
+    width: fit-content;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    color: #000;
+}

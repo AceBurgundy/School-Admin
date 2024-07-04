@@ -1,0 +1,127 @@
+body {
+    position: relative;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.form-box {
+    width: 450px;
+    position: absolute;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    transition: 500ms ease;
+    z-index: 0;
+    top: 100%;
+    background-color: var(--background);
+}
+
+.form-box.active {
+    top: 0%;
+    z-index: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form__message {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.form__inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+
+.form__inputs-container {
+    display: flex;
+    background-color: white;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.form__inputs-container.normal {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    place-items: center;
+}
+
+.form__inputs-container.password {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    place-items: center;
+}
+
+#eye {
+    display: none;
+}
+
+.icon-container {
+    display: grid;
+    place-items: center;
+}
+
+input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+}
+
+.form__options {
+    width: 100%;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 2rem;
+}
+
+.form__options__form-submit {
+    padding: 0 !important;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    display: grid;
+    place-items: center;
+    border: 2px solid white;
+}
+
+#forgot-password {
+    margin: 0 auto;
+    margin-top: 5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+#forgot-password:hover {
+    color: red;
+}
+
+.redirect {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    width: max-content;
+}
+
+.redirect:hover {
+    color: red;
+}
+
+g, path {
+    pointer-events: none;
+}

@@ -1,9 +1,9 @@
-const createStudentToggle = document.getElementById('create-new-student-button');
-const newStudentForm = document.getElementById('new-student-form');
+const createScholarshipButton = document.getElementById('create-new-student-button');
+const newScholarshipForm = document.getElementById('new-student-form');
 
-createStudentToggle.onclick = () => newStudentForm.classList.toggle('active');
+createScholarshipButton.onclick = () => newScholarshipForm.classList.toggle('active');
 
-newStudentForm.onsubmit = event => {
+newScholarshipForm.onsubmit = event => {
   event.preventDefault();
 
   const formData = {

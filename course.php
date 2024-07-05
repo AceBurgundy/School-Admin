@@ -5,7 +5,6 @@ require 'header.php';
 ?>
 
 <section>
-
   <button id="create-new-course-button" class="btn btn-primary">Create</button>
 
   <form id="new-course-form">

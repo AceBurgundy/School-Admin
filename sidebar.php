@@ -8,7 +8,7 @@
   <hr>
   <ul class="nav nav-pills flex-column mb-auto">
     <li class="nav-item">
-      <a href="admin.php" class="nav-link active" aria-current="page">
+      <a href="admin.php" class="nav-link <?php echo $page == 'admin' ? 'active' : 'text-white' ?>" aria-current="page">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#home"></use>
         </svg>
@@ -16,7 +16,7 @@
       </a>
     </li>
     <li>
-      <a href="college.php" class="nav-link text-white">
+      <a href="college.php" class="nav-link <?php echo $page == 'college' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#speedometer2"></use>
         </svg>
@@ -24,7 +24,7 @@
       </a>
     </li>
     <li>
-      <a href="contactnumber.php" class="nav-link text-white">
+      <a href="contactnumber.php" class="nav-link <?php echo $page == 'contactnumber' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#table"></use>
         </svg>
@@ -32,7 +32,7 @@
       </a>
     </li>
     <li>
-      <a href="course.php" class="nav-link text-white">
+      <a href="course.php" class="nav-link <?php echo $page == 'course' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#grid"></use>
         </svg>
@@ -40,7 +40,7 @@
       </a>
     </li>
     <li>
-      <a href="coursecurriculum.php" class="nav-link text-white">
+      <a href="coursecurriculum.php" class="nav-link <?php echo $page == 'coursecurriculum' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#people-circle"></use>
         </svg>
@@ -48,7 +48,7 @@
       </a>
     </li>
     <li>
-      <a href="coursereview.php" class="nav-link text-white">
+      <a href="coursereview.php" class="nav-link <?php echo $page == 'coursereview' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#people-circle"></use>
         </svg>
@@ -56,7 +56,7 @@
       </a>
     </li>
     <li>
-      <a href="department.php" class="nav-link text-white">
+      <a href="department.php" class="nav-link <?php echo $page == 'department' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#people-circle"></use>
         </svg>
@@ -64,7 +64,7 @@
       </a>
     </li>
     <li>
-      <a href="examdate.php" class="nav-link text-white">
+      <a href="examdate.php" class="nav-link <?php echo $page == 'examdate' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#people-circle"></use>
         </svg>
@@ -72,7 +72,7 @@
       </a>
     </li>
     <li>
-      <a href="goal.php" class="nav-link text-white">
+      <a href="goal.php" class="nav-link <?php echo $page == 'goal' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#people-circle"></use>
         </svg>
@@ -80,7 +80,7 @@
       </a>
     </li>
     <li>
-      <a href="goal_and_objective.php" class="nav-link text-white">
+      <a href="goal_and_objective.php" class="nav-link <?php echo $page == 'goal_and_objective' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#people-circle"></use>
         </svg>
@@ -88,7 +88,7 @@
       </a>
     </li>
     <li>
-      <a href="instructor.php" class="nav-link text-white">
+      <a href="instructor.php" class="nav-link <?php echo $page == 'instructor' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#people-circle"></use>
         </svg>
@@ -96,7 +96,7 @@
       </a>
     </li>
     <li>
-      <a href="news.php" class="nav-link text-white">
+      <a href="news.php" class="nav-link <?php echo $page == 'news' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#people-circle"></use>
         </svg>
@@ -104,7 +104,7 @@
       </a>
     </li>
     <li>
-      <a href="newsauthor.php" class="nav-link text-white">
+      <a href="newsauthor.php" class="nav-link <?php echo $page == 'newsauthor' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#people-circle"></use>
         </svg>
@@ -112,7 +112,7 @@
       </a>
     </li>
     <li>
-      <a href="scholarship.php" class="nav-link text-white">
+      <a href="scholarship.php" class="nav-link <?php echo $page == 'scholarship' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#people-circle"></use>
         </svg>
@@ -120,7 +120,7 @@
       </a>
     </li>
     <li>
-      <a href="school.php" class="nav-link text-white">
+      <a href="school.php" class="nav-link <?php echo $page == 'school' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#people-circle"></use>
         </svg>
@@ -128,7 +128,7 @@
       </a>
     </li>
     <li>
-      <a href="student.php" class="nav-link text-white">
+      <a href="student.php" class="nav-link <?php echo $page == 'student' ? 'active' : 'text-white' ?>">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#people-circle"></use>
         </svg>

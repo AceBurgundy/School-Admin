@@ -19,7 +19,7 @@
 
             <div class="form-group">
                 <label for="venue">Venue</label>
-                <input type="text" class="form-control" id="venue" name="venue" placeholder="Venue" maxlength="255">
+                <input type="text" class="form-control" id="venue" name="venue" placeholder="Enter the address or name of the venue" maxlength="255">
             </div>
 
             <div class="form-group">

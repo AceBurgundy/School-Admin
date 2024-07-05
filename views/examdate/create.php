@@ -2,13 +2,15 @@
 
 require("dbcon.php");
 
-$student_id = $_POST['student_id'];
+$date_taken = $_POST['date_taken'];
+
+
 
 $errorMessages = array();
 
 // Validation checks
-if (empty($student_id)) {
-    $errorMessages[] = 'Student ID is required';
+if (empty($date_taken)) {
+    $errorMessages[] = 'First date is required';
 }
 
 if (!empty($errorMessages)) {
@@ -22,22 +24,22 @@ if (!empty($errorMessages)) {
 }
 
 // Prepare and execute the INSERT statement
-$statement = $conn -> prepare(
-    "DELETE FROM student
-     WHERE id = ?"
+$statement = $conn->prepare(
+    "INSERT INTO examdate (date_taken)
+     VALUES (?)"
 );
 
-$statement -> bind_param("i", $student_id);
+$statement->bind_param("ssssiis", $date_taken);
 
 if ($statement->execute()) {
     $response = array(
         'status' => 'success',
-        'message' => 'Student record has been deleted successfully'
+        'message' => 'Student record inserted successfully'
     );
 } else {
     $response = array(
         'status' => 'error',
-        'message' => 'Failed to delete student record'
+        'message' => 'Failed to insert student record'
     );
 }
 

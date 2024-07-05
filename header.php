@@ -4,15 +4,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Your Website</title>
+    <title>RMMC Admin</title>
+
     <link rel="stylesheet" href="./styles/sidebars.css">
     <link rel="stylesheet" href="./styles/root.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link rel="stylesheet" href="./assets/dist/css/bootstrap.min.css">
-    <script src="./assets/js/color-modes.js" defer></script>
 
+    <script src="./assets/js/color-modes.js" defer></script>
     <script src="./scripts/sidebars.js"></script>
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <?php if ($page == 'admin') : ?>
         <link rel="stylesheet" href="./styles/admin.css">
         <script type="module" src="./scripts/admin.js"></script>

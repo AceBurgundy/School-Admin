@@ -9,8 +9,6 @@ require 'header.php';
 
   <form id="new-contactnumber-form">
 
-
-
     <div class="form-group">
       <label for="CollegeId">College Id</label>
       <input type="number" class="form-control" id="College Id" name="college_id" placeholder="College ID" required>

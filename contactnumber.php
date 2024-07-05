@@ -19,13 +19,13 @@
 
 
     <div class="form-group">
-      <label for="CollegeId">CollegeId</label>
+      <label for="CollegeId">College Id</label>
       <input type="number" class="form-control" id="College Id" name="college_id" placeholder="College ID" required>
     </div>
 
     <div class="form-group">
-      <label for="DepartmentId">DepartmentID</label>
-      <input type="number" class="form-control" id="Department Id" name="department_id" placeholder="DepartmentID">
+      <label for="DepartmentId">Department ID</label>
+      <input type="number" class="form-control" id="Department Id" name="department_id" placeholder="Department ID">
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>

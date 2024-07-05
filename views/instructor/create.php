@@ -2,14 +2,14 @@
 
 require("dbcon.php");
 
-$student_id = $_POST['student_id'];
-$first_name = $_POST['first_name'];
-$middle_initial = $_POST['middle_initial'];
-$last_name = $_POST['last_name'];
-$extension = $_POST['extension'];
-$exam_date_id = $_POST['exam_date_id'];
-$school_id = $_POST['school_id'];
-$scholarship_id = $_POST['scholarship_id'];
+$first_name= $_POST['first_name'];
+$middle_initial= $_POST['middle_initial'];
+$last_name= $_POST['last_name'];
+$extension= $_POST['extension'];
+$facebook_link_id= $_POST['facebook_link_id'];
+$twitter_link_id= $_POST['twitter_link_id'];
+$linkedin_link_id= $_POST['linkedin_link_id'];
+$instagran_link_id= $_POST['instagran_link_id'];
 
 $errorMessages = array();
 
@@ -50,12 +50,11 @@ if (!empty($errorMessages)) {
 
 // Prepare and execute the INSERT statement
 $statement = $conn -> prepare(
-    "UPDATE student
-     SET first_name = ?, middle_initial = ?, last_name = ?, extension = ?, exam_date_id = ?, school_id = ?, scholarship_id = ?
-     WHERE id = ?;"
+    "INSERT INTO student (first_name, middle_initial, last_name, extension, facebook_link_id, twitter_link_id, linkedin_link_id, instagran_link_id)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
 );
 
-$statement -> bind_param("ssssiisi", $first_name, $middle_initial, $last_name, $extension, $exam_date_id, $school_id, $scholarship_id, $student_id);
+$statement -> bind_param("ssssiis", $first_name, $middle_initial, $last_name, $extension, $facebook_link_id, $twitter_link_id, $linkedin_link_id, $instagran_link_id);
 
 if ($statement->execute()) {
     $response = array(

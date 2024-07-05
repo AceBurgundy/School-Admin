@@ -1,15 +1,17 @@
 <?php
 
-require("dbcon.php");
+require("../dbcon.php");
 
-$student_id = $_POST['id'];
+$name = $_POST['name'];
+
 
 $errorMessages = array();
 
 // Validation checks
-if (empty($student_id)) {
-    $errorMessages[] = 'Student ID is required';
+if (empty($name)) {
+    $errorMessages[] = 'Name is required';
 }
+
 
 if (!empty($errorMessages)) {
     $response = array(
@@ -22,23 +24,27 @@ if (!empty($errorMessages)) {
 }
 
 // Prepare and execute the INSERT statement
-$statement = $conn -> prepare(
-    "DELETE FROM student
-     WHERE id = ?"
+$statement = $conn->prepare(
+    "INSERT INTO scholarship (name)
+     VALUES (?)"
 );
 
-$statement -> bind_param("i", $student_id);
+$statement->bind_param("s", $name);
 
 if ($statement->execute()) {
     $response = array(
         'status' => 'success',
-        'message' => 'Student record has been deleted successfully'
+        'message' => 'Scholarship record inserted successfully'
     );
 } else {
     $response = array(
         'status' => 'error',
-        'message' => 'Failed to delete student record'
+        'message' => 'Failed to insert scholarship record'
     );
 }
 
 echo json_encode($response);
+
+$statement->close();
+$conn->close();
+

@@ -1,28 +1,7 @@
-// OLD
-// const createNewsAuthorButton = document.getElementById('create-new-student-button');
-// const newScholarshipForm = document.getElementById('new-student-form');
-
+import { createTable } from './generate-table.js';
 import { makeToastNotification } from './helper.js';
+import { fetchData } from './views-fetcher.js';
 
-// createNewsAuthorButton.onclick = () => newScholarshipForm.classList.toggle('active');
-
-// newScholarshipForm.onsubmit = event => {
-//   event.preventDefault();
-
-//   const formData = {
-//     first_name: document.getElementById('firstName').value,
-//     middle_initial: document.getElementById('middleInitial').value,
-//     last_name: document.getElementById('lastName').value,
-//     extension: document.getElementById('extension').value,
-//     exam_date_id: document.getElementById('examDateId').value,
-//     school_id: document.getElementById('schoolId').value,
-//     scholarship_id: document.getElementById('scholarshipId').value
-//   };
-
-//   console.log(formData);
-// }
-
-// NEW
 const createNewsAuthorButton = document.getElementById('create-new-student-button');
 const newScholarshipForm = document.getElementById('new-student-form');
 
@@ -68,3 +47,8 @@ newScholarshipForm.onsubmit = event => {
     })
     .catch(error => console.error("Error:", error));
 }
+
+createTable(
+  await fetchData("views/student/table_headers.php"),
+  await fetchData("views/student/students.php")
+);

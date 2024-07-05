@@ -2,7 +2,7 @@
 
 require("dbcon.php");
 
-$student_id = $_POST['id'];
+$student_id = $_POST['student_id'];
 
 $errorMessages = array();
 

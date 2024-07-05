@@ -17,8 +17,7 @@ try {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM student";
-
+    $sql = "SELECT * FROM admin";
     $statement = $conn->prepare($sql);
 
     if (!$statement) {
@@ -33,13 +32,10 @@ try {
     while ($row = $result->fetch_assoc()) {
         $courseData[] = array(
             "id" => $row["id"],
-            "first_name" => $row["first_name"],
-            "middle_initial" => $row["middle_initial"],
-            "last_name" => $row["last_name"],
-            "extension" => $row["extension"],
-            "exam_date_id" => $row["exam_date_id"],
-            "school_id" => $row["school_id"],
-            "scholarship_id" => $row["scholarship_id"]
+            "username" => $row["username"],
+            "birthdate" => $row["birthdate"],
+            "email" => $row["email"],
+            "password" => $row["password"]
         );
     }
 

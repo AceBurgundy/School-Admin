@@ -5,10 +5,7 @@ import { fetchData } from './views-fetcher.js';
 const createNewsAuthorButton = document.getElementById('create-new-student-button');
 const newScholarshipForm = document.getElementById('new-student-form');
 
-console.log(newScholarshipForm, createNewsAuthorButton);
-
 createNewsAuthorButton.addEventListener('click', () => {
-  console.log('clicked');
   newScholarshipForm.classList.toggle('active')
 })
 

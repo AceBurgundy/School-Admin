@@ -19,7 +19,9 @@
 
 //   console.log(formData);
 // }
+import { createTable } from './generate-table.js';
 import { makeToastNotification } from './helper.js';
+import { fetchData } from './views-fetcher.js';
 
 
 
@@ -71,3 +73,5 @@ newInstructorForm.onsubmit = event => {
   })
   .catch(error => console.error("Error:", error));
 }
+
+createTable(await fetchData('views/instructor/instructor.php'));

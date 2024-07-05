@@ -1,7 +1,7 @@
-const createScholarshipButton = document.getElementById('create-new-student-button');
+const createNewsAuthorButton = document.getElementById('create-new-student-button');
 const newScholarshipForm = document.getElementById('new-student-form');
 
-createScholarshipButton.onclick = () => newScholarshipForm.classList.toggle('active');
+createNewsAuthorButton.onclick = () => newScholarshipForm.classList.toggle('active');
 
 newScholarshipForm.onsubmit = event => {
   event.preventDefault();

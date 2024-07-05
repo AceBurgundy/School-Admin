@@ -2,59 +2,29 @@
 @import url("./fonts.css");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: "Poppins";
 }
 
-:root {
-    --text: #17170c;
-    --background: #e0dfd2;
-    --primary: #ffbc21;
-    --secondary: #e2e1ca;
-    --accent: #928e4f;
-}
-
-:root.dark {
-    --text: #fafafa;
-    --background: #050505;
-    --primary: #dad8b9;
-    --secondary: #212012;
-    --accent: #c9c69c;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 body {
-    background-color: var(--background);
-    color: var(--text);
+    height: 100dvh;
+    width: 100dvw;
 }
 
-button {
-    cursor: pointer;
-    background-color: var(--primary);
-    border-radius: 10px;
-    padding: 0.5rem 1rem;
-    border: none;
-    font-size: 1rem;
-    display: grid;
-    place-items: center;
+body {
+    display: flex;
 }
 
-button > svg {
-    width: 1.5rem;
+body > nav {
+    width: 20%;
 }
 
-p {
-    cursor: default;
-}
-
-
-svg {
-    width: 1.1rem;
-    fill: rgb(37, 37, 37);
-    height: fit-content;
-}
-
-#eye, #eye-close {
-    cursor: pointer;
+body > section {
+    width: 80%;
+    position: relative;
 }

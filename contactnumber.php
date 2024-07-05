@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$page = 'contactnumber';
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="./styles/contactnumber.css">
-  <link rel="stylesheet" href="./styles/global.css">
-  <script type="module" src="./scripts/contactnumber.js"></script>
-</head>
+require 'header.php';
+?>
 
-<body>
+<section>
   <button id="create-contactnumber-button" class="btn btn-primary">Create</button>
 
   <form id="new-contactnumber-form">

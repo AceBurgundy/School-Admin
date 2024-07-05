@@ -23,6 +23,10 @@ body {
     border-radius: 10px;
 
     box-shadow: 0px 5px 24px -4px rgba(0,0,0,0.75);
+
+    min-height: auto; /* Adjust this to your desired minimum height */
+    max-height: 70vh;  /* 70% of the viewport height */
+    overflow-y: auto;  /* Enable vertical scrolling */
 }
 
 #new-contactnumber-form.active {

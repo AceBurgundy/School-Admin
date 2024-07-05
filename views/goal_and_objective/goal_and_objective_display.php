@@ -17,7 +17,7 @@ try {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM student";
+    $sql = "SELECT * FROM goal_and_objective";
 
     $statement = $conn->prepare($sql);
 
@@ -32,21 +32,13 @@ try {
 
     while ($row = $result->fetch_assoc()) {
         $courseData[] = array(
-            "title" => $row["title"],
-            "image" => $row["image"],
+            "id" => $row["id"],
+            "text" => $row["text"],
+            "college_id" => $row["college_id"],
+            "department_id" => $row["department_id"],
             "date_added" => $row["date_added"],
             "date_updated" => $row["date_updated"],
-            "rating" => $row["rating"],
-            "language_used" => $row["language_used"],
-            "number_of_lessons" => $row["number_of_lessons"],
-            "number_of_quizes" => $row["number_of_quizes"],
-            "course_level" => $row["course_level"],
-            "duration" => $row["duration"],
-            "description" => $row["description"],
-            "what_will_you_learn" => $row["what_will_you_learn"],
-            "instructorFirstName" => $row["instructorFirstName"],
-            "instructorLastName" => $row["instructorLastName"],
-            "departmentName" => $row["departmentName"]
+        
         );
     }
 

@@ -74,4 +74,7 @@ newInstructorForm.onsubmit = event => {
   .catch(error => console.error("Error:", error));
 }
 
-createTable(await fetchData('views/instructor/instructor.php'));
+createTable(
+  await fetchData("views/instructor/table_headers.php"),
+  await fetchData("views/instructor/instructor.php")
+);

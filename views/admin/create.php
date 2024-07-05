@@ -48,7 +48,7 @@ if (!empty($errorMessages)) {
 // Prepare and execute the INSERT statement
 $statement = $conn -> prepare(
     "INSERT INTO admin (username, birthdate, email, password)
-     VALUES (?, ?, ?, ?, ?, ?, ?)"
+     VALUES (?, ?, ?, ?)"
 );
 
 $statement -> bind_param("ssssiis", $username, $birthdate, $email, $password);

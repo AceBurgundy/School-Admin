@@ -48,4 +48,7 @@ newScholarshipForm.onsubmit = event => {
     .catch(error => console.error("Error:", error));
 }
 
-createTable(await fetchData('views/student/students.php'));
+createTable(
+  await fetchData("views/student/table_headers.php"),
+  await fetchData("views/student/students.php")
+);

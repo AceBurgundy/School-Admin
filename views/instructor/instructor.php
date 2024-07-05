@@ -17,8 +17,7 @@ try {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM student";
-
+    $sql = "SELECT * FROM instructor";
     $statement = $conn->prepare($sql);
 
     if (!$statement) {
@@ -34,12 +33,15 @@ try {
         $courseData[] = array(
             "id" => $row["id"],
             "first_name" => $row["first_name"],
-            "middle_initial" => $row["middle_initial"],
+            "middle_name" => $row["middle_name"],
             "last_name" => $row["last_name"],
             "extension" => $row["extension"],
-            "exam_date_id" => $row["exam_date_id"],
-            "school_id" => $row["school_id"],
-            "scholarship_id" => $row["scholarship_id"]
+            "facebook_link" => $row["facebook_link"],
+            "twitter_link" => $row["twitter_link"],
+            "linkedin_link" => $row["linkedin_link"],
+            "instagram_link" => $row["instagram_link"],
+            "date_added" => $row["date_added"],
+            "date_updated" => $row["date_updated"]
         );
     }
 

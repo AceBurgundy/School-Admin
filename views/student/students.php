@@ -17,14 +17,7 @@ try {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT Course.title, Course.image, Course.date_added, Course.date_updated, Course.rating, Course.language_used,
-                   Course.number_of_lessons, Course.number_of_quizes, Course.course_level, Course.duration,
-                   Course.description, Course.what_will_you_learn,
-                   Instructor.first_name AS instructorFirstName, Instructor.last_name AS instructorLastName,
-                   Department.name AS departmentName
-            FROM Course
-            LEFT JOIN Instructor ON Course.instructor_id = Instructor.id
-            LEFT JOIN Department ON Course.department_id = Department.id";
+    $sql = "SELECT * FROM student";
 
     $statement = $conn->prepare($sql);
 
@@ -39,21 +32,14 @@ try {
 
     while ($row = $result->fetch_assoc()) {
         $courseData[] = array(
-            "title" => $row["title"],
-            "image" => $row["image"],
-            "date_added" => $row["date_added"],
-            "date_updated" => $row["date_updated"],
-            "rating" => $row["rating"],
-            "language_used" => $row["language_used"],
-            "number_of_lessons" => $row["number_of_lessons"],
-            "number_of_quizes" => $row["number_of_quizes"],
-            "course_level" => $row["course_level"],
-            "duration" => $row["duration"],
-            "description" => $row["description"],
-            "what_will_you_learn" => $row["what_will_you_learn"],
-            "instructorFirstName" => $row["instructorFirstName"],
-            "instructorLastName" => $row["instructorLastName"],
-            "departmentName" => $row["departmentName"]
+            "id" => $row["id"],
+            "first_name" => $row["first_name"],
+            "middle_initial" => $row["middle_initial"],
+            "last_name" => $row["last_name"],
+            "extension" => $row["extension"],
+            "exam_date_id" => $row["exam_date_id"],
+            "school_id" => $row["school_id"],
+            "scholarship_id" => $row["scholarship_id"]
         );
     }
 

@@ -50,7 +50,7 @@ if (!empty($errorMessages)) {
 
 // Prepare and execute the INSERT statement
 $statement = $conn -> prepare(
-    "UPDATE Student
+    "UPDATE student
      SET first_name = ?, middle_initial = ?, last_name = ?, extension = ?, exam_date_id = ?, school_id = ?, scholarship_id = ?
      WHERE id = ?;"
 );

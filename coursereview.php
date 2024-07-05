@@ -1,8 +1,9 @@
-<?php 
+<?php
   $page = 'coursereview';
   require 'header.php'
   ?>
 <section>
+
   <button id="create-new-course-review-button" class="btn btn-primary">Create</button>
 
   <form id="new-course-review-form">
@@ -30,9 +31,9 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
-
   </form>
-</section>
-</body>
 
+</section>
+
+</body>
 </html>

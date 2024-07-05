@@ -1,22 +1,22 @@
 <?php
-    $page = 'scholarship';
-    require 'header.php';
-  ?>
-    <section>
-    <button id="create-new-scholarship-button" class="btn btn-primary">Create</button>
+$page = 'scholarship';
+require 'header.php';
+?>
+<section>
 
-    <form id="new-scholarship-form">
+  <button id="create-new-scholarship-button" class="btn btn-primary">Create</button>
 
-        <div class="form-group">
-            <label for="scholarship">Scholarship</label>
-            <input type="text" class="form-control" id="scholarship" placeholder="Scholarship">
-        </div>
+  <form id="new-scholarship-form">
 
+    <div class="form-group">
+      <label for="scholarship">Scholarship</label>
+      <input type="text" class="form-control" id="scholarship" placeholder="Scholarship">
+    </div>
 
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    </section>
+</section>
+
 </body>
-
 </html>

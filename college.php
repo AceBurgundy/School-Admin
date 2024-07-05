@@ -1,8 +1,9 @@
-<?php $page = 'college';
+<?php
+$page = 'college';
 require 'header.php';
 ?>
-
 <section>
+
   <button id="create-new-college-button" class="btn btn-primary">Create</button>
 
   <form id="new-college-form">
@@ -18,7 +19,7 @@ require 'header.php';
       <label for="banner_file_path">Banner File Path</label>
       <input type="file" class="form-control" id="bannerFilePath" name="bannerFilePath" placeholder="Banner file path" maxlength="255">
     </div>
-    
+
     <!-- logo -->
     <div class="form-group">
       <label for="logo_file_path">Logo File Path</label>
@@ -47,13 +48,13 @@ require 'header.php';
     <div class="form-group">
       <label for="mission">Mission</label>
       <input type="text" class="form-control" id="mission" name="mission" placeholder="Mission" maxlength="255">
-    </div> 
+    </div>
 
     <!-- vission -->
     <div class="form-group">
       <label for="vission">Vission</label>
       <input type="text" class="form-control" id="vission" name="vission" placeholder="Vision" maxlength="255">
-    </div> 
+    </div>
 
     <!-- program educ. -->
     <div class="form-group">
@@ -65,6 +66,6 @@ require 'header.php';
 
    </form>
   </section>
-</body>
 
+</body>
 </html>

@@ -1,22 +1,22 @@
 <?php
-    $page = 'newsauthor';
-    require 'header.php';
-  ?>
-    <section>
-    <button id="create-new-newsauthor-button" class="btn btn-primary">Create</button>
+$page = 'newsauthor';
+require 'header.php';
+?>
+<section>
 
-    <form id="new-newsauthor-form">
+  <button id="create-new-newsauthor-button" class="btn btn-primary">Create</button>
 
-        <div class="form-group">
-            <label for="newsauthor">newsauthor</label>
-            <input type="text" class="form-control" id="newsauthor" placeholder="News Author">
-        </div>
+  <form id="new-newsauthor-form">
 
+    <div class="form-group">
+      <label for="newsauthor">News Author</label>
+      <input type="text" class="form-control" id="newsauthor" placeholder="News Author">
+    </div>
 
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    </section>
+</section>
+
 </body>
-
 </html>

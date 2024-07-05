@@ -17,7 +17,38 @@ try {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SHOW COLUMNS FROM coursecurriculum";
+    // Get the table name from the query parameter
+    if (!isset($_GET['table'])) {
+        throw new Exception("Table name not provided");
+    }
+
+    $table = $_GET['table'];
+
+    // Validate the table name to prevent SQL injection
+    $allowedTables = [
+        "admin",
+        "college",
+        "contactnumber",
+        "course",
+        "coursecurriculum",
+        "coursereview",
+        "department",
+        "examdate",
+        "goal",
+        "goal_and_objective",
+        "instructor",
+        "news",
+        "newsauthor",
+        "scholarship",
+        "school",
+        "student"
+    ];
+
+    if (!in_array($table, $allowedTables)) {
+        throw new Exception("Invalid table name");
+    }
+
+    $sql = "SHOW COLUMNS FROM $table";
     $statement = $conn->prepare($sql);
 
     if (!$statement) {

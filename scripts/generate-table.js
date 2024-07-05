@@ -18,7 +18,7 @@ export const createTable = (headerList, dataList) => {
             .map(
               (data) => /* html */ `
               <tr>
-                ${tableHeader.map((key) => `<td>${data[key]}</td>`).join("")}
+                ${headerList.map((key) => `<td>${data[key]}</td>`).join("")}
               </tr>
             `
             )

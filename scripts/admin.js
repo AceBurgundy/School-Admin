@@ -46,4 +46,3 @@ createTable(
   await fetchData("views/admin/table_headers.php"),
   await fetchData("views/admin/admin.php")
 );
-// createTable(await fetchData('views/admin/admin.php'));

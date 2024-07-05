@@ -28,8 +28,6 @@ require 'header.php';
       <input type="text" class="form-control" id="Mission" name="last_name" placeholder="Mission" maxlength="255">
     </div>
 
-
-
     <div class="form-group">
       <label for="Vission">Vission</label>
       <input type="text" class="form-control" id="Vission" name="exam_date_id" placeholder="Vission" required>
@@ -47,6 +45,8 @@ require 'header.php';
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+
+  <div id="table-container"></div>
 
 </section>
 

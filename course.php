@@ -72,5 +72,9 @@ require 'header.php';
 
   </form>
 
+  <div id="table-container"></div>
+
+</section>
+
 </body>
 </html>

@@ -20,6 +20,8 @@ require 'header.php';
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
+  <div id="table-container"></div>
+
 </section>
 
 </body>

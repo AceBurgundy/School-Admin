@@ -20,5 +20,5 @@
 }
 
 #new-student-form.active {
-    display: block;
+    display: flex;
 }

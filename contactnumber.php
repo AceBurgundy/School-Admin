@@ -1,10 +1,9 @@
 <?php
 $page = 'contactnumber';
-
 require 'header.php';
 ?>
-
 <section>
+
   <button id="create-contactnumber-button" class="btn btn-primary">Create</button>
 
   <form id="new-contactnumber-form">
@@ -22,7 +21,7 @@ require 'header.php';
     <button type="submit" class="btn btn-primary">Submit</button>
 
   </form>
+</section>
 
 </body>
-
 </html>

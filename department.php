@@ -1,18 +1,16 @@
-<?php 
- $page='department';
-
- require 'header.php';
+<?php
+$page = 'department';
+require 'header.php';
 ?>
-
 <section>
- <button id="create-new-departmentBtn" class="btn btn-primary">Create</button>
+  <button id="create-new-departmentBtn" class="btn btn-primary">Create</button>
 
   <form id="new-department-form">
 
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" placeholder="Name">
-    
+
     </div>
 
     <div class="form-group">
@@ -30,7 +28,7 @@
       <input type="text" class="form-control" id="Mission" name="last_name" placeholder="Mission" maxlength="255">
     </div>
 
-   
+
 
     <div class="form-group">
       <label for="Vission">Vission</label>
@@ -48,11 +46,9 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
-
   </form>
+
 </section>
 
-
-  
-
-  
+</body>
+</html>

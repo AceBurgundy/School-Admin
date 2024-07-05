@@ -8,8 +8,4 @@ newStudentForm.onsubmit = event => {
 
   const formData = {
     date_taken: document.getElementById('dateTaken').value,
-  
-  };
-
-  console.log(formData);
-}
+   

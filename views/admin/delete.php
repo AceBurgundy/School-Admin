@@ -2,13 +2,13 @@
 
 require("dbcon.php");
 
-$student_id = $_POST['id'];
+$adminId = $_POST['adminId'];
 
 $errorMessages = array();
 
 // Validation checks
-if (empty($student_id)) {
-    $errorMessages[] = 'Student ID is required';
+if (empty($adminId)) {
+    $errorMessages[] = 'Admin ID is required';
 }
 
 if (!empty($errorMessages)) {
@@ -23,11 +23,11 @@ if (!empty($errorMessages)) {
 
 // Prepare and execute the INSERT statement
 $statement = $conn -> prepare(
-    "DELETE FROM student
+    "DELETE FROM admin
      WHERE id = ?"
 );
 
-$statement -> bind_param("i", $student_id);
+$statement -> bind_param("i", $adminId);
 
 if ($statement->execute()) {
     $response = array(

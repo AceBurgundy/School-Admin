@@ -1,0 +1,18 @@
+:root {
+    --text: #04060a;
+    --background: #fafbfd;
+    --primary: #477ad1;
+    --secondary: #86aae7;
+    --accent: #5d90e7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+}

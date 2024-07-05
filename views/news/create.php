@@ -55,16 +55,16 @@ $statement = $conn -> prepare(
 
 $statement -> bind_param("sssssss", $title, $image_path, $venue, $date_time, $start_time, $end_time, $link);
 
-// if ($statement->execute()) {
-//     $response = array(
-//         'status' => 'success',
-//         'message' => 'Student record inserted successfully'
-//     );
-// } else {
-//     $response = array(
-//         'status' => 'error',
-//         'message' => 'Failed to insert student record'
-//     );
-// }
+if ($statement->execute()) {
+    $response = array(
+        'status' => 'success',
+        'message' => 'Student record inserted successfully'
+    );
+} else {
+    $response = array(
+        'status' => 'error',
+        'message' => 'Failed to insert student record'
+    );
+}
 
 echo json_encode($response);

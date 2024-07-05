@@ -39,7 +39,9 @@ try {
             "extension" => $row["extension"],
             "exam_date_id" => $row["exam_date_id"],
             "school_id" => $row["school_id"],
-            "scholarship_id" => $row["scholarship_id"]
+            "scholarship_id" => $row["scholarship_id"],
+            "date_added" => $row["date_added"],
+            "date_updated" => $row["date_updated"]
         );
     }
 

@@ -5,7 +5,9 @@ import { fetchData } from './views-fetcher.js';
 const createCourseCurriculumToggle = document.getElementById('create-new-course-curriculum-button');
 const newCourseCurriculumForm = document.getElementById('new-course-curriculum-form');
 
-createCourseCurriculumToggle.onclick = () => newCourseCurriculumForm.classList.toggle('active');
+createCourseCurriculumToggle.onclick = () => {
+  newCourseCurriculumForm.classList.toggle('active')
+};
 
 newCourseCurriculumForm.onsubmit = event => {
   event.preventDefault();
@@ -38,8 +40,7 @@ newCourseCurriculumForm.onsubmit = event => {
   .catch(error => console.error("Error:", error));
 }
 
-
 createTable(
-  await fetchData("views/coursecurriculum/table_headers.php"),
+  await fetchData("views/table_headers.php?table=coursecurriculum"),
   await fetchData("views/coursecurriculum/coursecurriculums.php")
 );

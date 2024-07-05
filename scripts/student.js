@@ -5,7 +5,12 @@ import { fetchData } from './views-fetcher.js';
 const createNewsAuthorButton = document.getElementById('create-new-student-button');
 const newScholarshipForm = document.getElementById('new-student-form');
 
-createNewsAuthorButton.onclick = () => newScholarshipForm.classList.toggle('active');
+console.log(newScholarshipForm, createNewsAuthorButton);
+
+createNewsAuthorButton.addEventListener('click', () => {
+  console.log('clicked');
+  newScholarshipForm.classList.toggle('active')
+})
 
 newScholarshipForm.onsubmit = event => {
   event.preventDefault();
@@ -49,6 +54,6 @@ newScholarshipForm.onsubmit = event => {
 }
 
 createTable(
-  await fetchData("views/student/table_headers.php"),
+  await fetchData("views/table_headers.php?table=student"),
   await fetchData("views/student/students.php")
 );

@@ -43,6 +43,6 @@ newAdminForm.onsubmit = (event) => {
 };
 
 createTable(
-  await fetchData("views/admin/table_headers.php"),
+  await fetchData("views/table_headers.php?table=admin"),
   await fetchData("views/admin/admin.php")
 );

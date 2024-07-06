@@ -1,6 +1,5 @@
 export const createTable = (headerList, dataList) => {
   const container = document.getElementById("table-container");
-  console.log(container);
 
   container.innerHTML = /* html */ `
     <table class="table table-dark">

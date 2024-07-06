@@ -1,6 +1,6 @@
 <?php
 
-require("../dbcon.php");
+require("dbcon.php");
 
 $name = $_POST['input_name'];
 $review = $_POST['course_review'];
@@ -39,10 +39,10 @@ if (!empty($errorMessages)) {
 // Prepare and execute the INSERT statement
 $statement = $conn -> prepare(
     "INSERT INTO coursereview (input_name, course_review, course_rating, course_id )
-     VALUES (?, ?, ?, ?, ?, ?, ?)"
+     VALUES (?, ?, ?, ?)"
 );
 
-$statement -> bind_param("ssssiis", $name, $review, $rating, $course_id);
+$statement -> bind_param("ssii", $name, $review, $rating, $course_id);
 
 if ($statement->execute()) {
     $response = array(

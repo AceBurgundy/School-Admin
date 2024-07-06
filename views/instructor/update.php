@@ -1,6 +1,11 @@
 <?php
 
-require("dbcon.php");
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'rmmcdatabase';
+
+$conn = new mysqli($host, $username, $password, $database);
 
 $first_name= $_POST['first_name'];
 $middle_initial= $_POST['middle_initial'];
@@ -51,7 +56,7 @@ if (!empty($errorMessages)) {
 // Prepare and execute the INSERT statement
 $statement = $conn -> prepare(
     "UPDATE Student
-     SET first_name = ?, middle_initial = ?, last_name = ?, extension = ?, facebook_link_id = ?, twitter_link_id = ?, linkedin_link_id = ?, instagran_link_id = ? 
+     SET first_name = ?, middle_initial = ?, last_name = ?, extension = ?, facebook_link_id = ?, twitter_link_id = ?, linkedin_link_id = ?, instagran_link_id = ?
      WHERE id = ?;"
 );
 

@@ -1,6 +1,15 @@
 <?php
 
-require("../dbcon.php");
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'rmmcdatabase';
+
+$conn = new mysqli($host, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 //naga base sa jscript
 $name = $_POST['input_name'];

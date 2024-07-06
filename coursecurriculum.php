@@ -15,11 +15,7 @@ require 'header.php'
 
     <div class="form-group">
       <label for="course-id">Course ID</label>
-      <select class="form-control" id="course-id" name="course-id">
-        <option value="course1">Course 1</option>
-        <option value="course2">Course 2</option>
-        <option value="course3">Course 3</option>
-      </select>
+      <input type="number" class="form-control" id="course-id" name="course-id" placeholder="Input course ID">
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>

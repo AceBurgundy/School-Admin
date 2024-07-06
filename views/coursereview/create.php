@@ -1,6 +1,15 @@
 <?php
 
-require("dbcon.php");
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'rmmcdatabase';
+
+$conn = new mysqli($host, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 $name = $_POST['input_name'];
 $review = $_POST['course_review'];
@@ -38,11 +47,11 @@ if (!empty($errorMessages)) {
 
 // Prepare and execute the INSERT statement
 $statement = $conn -> prepare(
-    "INSERT INTO coursereview (input_name, course_review, course_rating, course_id )
+    "INSERT INTO coursereview (name, review, rating, course_id )
      VALUES (?, ?, ?, ?)"
 );
 
-$statement -> bind_param("ssii", $name, $review, $rating, $course_id);
+$statement -> bind_param("ssdi", $name, $review, $rating, $course_id);
 
 if ($statement->execute()) {
     $response = array(

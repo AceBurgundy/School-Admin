@@ -8,13 +8,13 @@ require 'header.php';
 
   <form id="new-goal-object-form">
     <div class="form-group">
-      <label for="college-id">College ID</label>
-      <input type="text" class="form-control" id="college-id" name="college-id" placeholder="college id" required>
+      <label for="college_id">College ID</label>
+      <input type="text" class="form-control" id="college_id" name="college_id" placeholder="college id" required>
     </div>
 
     <div class="form-group">
-      <label for="department-id">Department ID</label>
-      <input type="text" class="form-control" id="department-id" name="department-id" placeholder="department id" required>
+      <label for="department_id">Department ID</label>
+      <input type="text" class="form-control" id="department_id" name="department_id" placeholder="department id" required>
     </div>
 
     <div class="form-group">
@@ -24,6 +24,8 @@ require 'header.php';
 
     <button type="submit" class="btn btn-primary" id="submit">Submit</button>
   </form>
+
+  <div id="table-container"></div>
 
 </section>
 

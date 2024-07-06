@@ -2,7 +2,7 @@
 
 require("dbcon.php");
 
-$id = $_POST['adminId'];
+$adminId = $_POST['adminId'];
 $username = $_POST['username'];
 $birthdate = $_POST['birthdate'];
 $email = $_POST['email'];
@@ -57,12 +57,12 @@ $statement -> bind_param("ssssiisi", $username, $birthdate, $email, $password);
 if ($statement->execute()) {
     $response = array(
         'status' => 'success',
-        'message' => 'Student record inserted successfully'
+        'message' => 'College record inserted successfully'
     );
 } else {
     $response = array(
         'status' => 'error',
-        'message' => 'Failed to insert student record'
+        'message' => 'Failed to insert college record'
     );
 }
 

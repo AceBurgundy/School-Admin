@@ -43,7 +43,7 @@ newInstructorForm.onsubmit = event => {
     linkedin_link_id: document.getElementById('linkedinLinkId').value,
     instagran_link_id: document.getElementById('instagramLinkId').value
   };
-  
+
   const formData = new FormData();
 
   formData.append("first_name", formValues['first_name']);
@@ -74,4 +74,7 @@ newInstructorForm.onsubmit = event => {
   .catch(error => console.error("Error:", error));
 }
 
-createTable(await fetchData('views/instructor/instructor.php'));
+createTable(
+  await fetchData("views/table_headers.php?table=student"),
+  await fetchData("views/instructor/instructor.php")
+);

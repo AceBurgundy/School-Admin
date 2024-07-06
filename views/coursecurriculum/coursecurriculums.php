@@ -17,7 +17,8 @@ try {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SHOW COLUMNS FROM admin";
+    $sql = "SELECT * FROM coursecurriculum";
+
     $statement = $conn->prepare($sql);
 
     if (!$statement) {
@@ -27,14 +28,20 @@ try {
     $statement->execute();
     $result = $statement->get_result();
 
-    $attributes = array();
+    $courseData = array();
 
     while ($row = $result->fetch_assoc()) {
-        $attributes[] = $row["Field"];
+        $courseData[] = array(
+            "id" => $row["id"],
+            "text" => $row["text"],
+            "course_id" => $row["course_id"],
+            "data_added" => $row["date_added"],
+            "data_updated" => $row["date_updated"]
+        );
     }
 
     header('Content-Type: application/json');
-    echo json_encode($attributes);
+    echo json_encode($courseData);
 
     $statement->close();
     $conn->close();
@@ -42,7 +49,5 @@ try {
 } catch (Exception $error) {
     http_response_code(500);
     header('Content-Type: application/json');
-    echo json_encode(array("error" => $error->getMessage()));
+    echo json_encode(array("error" => $error -> getMessage()));
 }
-
-?>

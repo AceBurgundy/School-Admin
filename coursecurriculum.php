@@ -15,12 +15,14 @@ require 'header.php'
 
     <div class="form-group">
       <label for="course-id">Course ID</label>
-      <input type="number" class="form-control" id="course-id" name="course-id" placeholder="Course ID" maxlength="255">
+      <input type="number" class="form-control" id="course-id" name="course-id" placeholder="Input course ID">
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 
   </form>
+
+  <div id="table-container"></div>
 
 </section>
 

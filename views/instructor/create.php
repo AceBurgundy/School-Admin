@@ -1,6 +1,11 @@
 <?php
 
-require("dbcon.php");
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'rmmcdatabase';
+
+$conn = new mysqli($host, $username, $password, $database);
 
 $first_name= $_POST['first_name'];
 $middle_initial= $_POST['middle_initial'];

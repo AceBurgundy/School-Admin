@@ -1,6 +1,11 @@
 <?php
 
-require("dbcon.php");
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'rmmcdatabase';
+
+$conn = new mysqli($host, $username, $password, $database);
 
 $title= $_POST['title'];
 $image_path= $_POST['image_path'];
@@ -49,8 +54,8 @@ $errorMessages = array();
 
 // Prepare and execute the INSERT statement
 $statement = $conn -> prepare(
-    "UPDATE news 
-    SET title= ?,imagePath= ?, venue= ?, dateTime= ?, startTime= ?, endTime= ?, link= ? 
+    "UPDATE news
+    SET title= ?,imagePath= ?, venue= ?, dateTime= ?, startTime= ?, endTime= ?, link= ?
     WHERE id = ?;"
 );
 

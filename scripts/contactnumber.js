@@ -7,7 +7,6 @@ newContactNumberForm.onsubmit = event => {
   event.preventDefault();
 
   const formData = {
-  
     college_id: document.getElementById('collegelId').value,
     department_id: document.getElementById('departmentId').value
   };

@@ -10,12 +10,23 @@ require 'header.php';
 
     <div class="form-group">
       <label for="CollegeId">College Id</label>
-      <input type="number" class="form-control" id="College Id" name="college_id" placeholder="College ID" required>
+      <input
+        type="number"
+        class="form-control"
+        id="College Id"
+        name="college_id"
+        placeholder="College ID"
+        required>
     </div>
 
     <div class="form-group">
       <label for="DepartmentId">Department ID</label>
-      <input type="number" class="form-control" id="Department Id" name="department_id" placeholder="Department ID">
+      <input
+        type="number"
+        class="form-control"
+        id="Department ID"
+        name="department_id"
+        placeholder="Department ID">
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
@@ -28,3 +39,4 @@ require 'header.php';
 
 </body>
 </html>
+

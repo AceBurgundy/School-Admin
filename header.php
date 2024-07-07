@@ -68,6 +68,10 @@
         <link rel="stylesheet" href="./styles/examdate.css">
         <script type="module" src="./scripts/examdate.js"></script>
         <title>Exam Date</title>
+    <?php elseif ($page == 'goal') : ?>
+        <link rel="stylesheet" href="./styles/goal.css">
+        <script type="module" src="./scripts/goal.js"></script>
+        <title>Goal</title>
     <?php elseif ($page == 'goal_and_objective') : ?>
         <link rel="stylesheet" href="./styles/goal_and_objective.css">
         <script type="module" src="./scripts/goal_and_objective.js"></script>

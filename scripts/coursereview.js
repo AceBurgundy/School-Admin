@@ -24,7 +24,7 @@ newCourseReviewForm.onsubmit = event => {
   formData.append("course_rating", formValues['rating']);
   formData.append("course_id", formValues['course_id']);
 
-  fetch("views/coursecurriculum/create.php", {
+  fetch("views/coursereview/create.php", {
     method: "POST",
     body: formData,
   })

@@ -38,10 +38,10 @@ newInstructorForm.onsubmit = event => {
     middle_initial: document.getElementById('middleInitial').value,
     last_name: document.getElementById('lastName').value,
     extension: document.getElementById('extension').value,
-    facebook_link_id: document.getElementById('facebookLinkId').value,
-    twitter_link_id: document.getElementById('twitterLinkId').value,
-    linkedin_link_id: document.getElementById('linkedinLinkId').value,
-    instagran_link_id: document.getElementById('instagramLinkId').value
+    facebook_link: document.getElementById('facebookLink').value,
+    twitter_link: document.getElementById('twitterLink').value,
+    linkedin_link: document.getElementById('linkedinLink').value,
+    instagram_link: document.getElementById('instagramLink').value
   };
 
   const formData = new FormData();
@@ -50,10 +50,10 @@ newInstructorForm.onsubmit = event => {
   formData.append("middle_initial", formValues['middle_initial']);
   formData.append("last_name", formValues['last_name']);
   formData.append("extension", formValues['extension']);
-  formData.append("facebook_link_id", formValues['facebook_link_id']);
-  formData.append("twitter_link_id", formValues['twitter_link_id']);
-  formData.append("linkedin_link_id", formValues['linkedin_link_id']);
-  formData.append("instagran_link_id", formValues['instagran_link_id']);
+  formData.append("facebook_link", formValues['facebook_link']);
+  formData.append("twitter_link", formValues['twitter_link']);
+  formData.append("linkedin_link", formValues['linkedin_link']);
+  formData.append("instagram_link", formValues['instagram_link']);
 
 
   fetch("views/instructor.php/create", {

@@ -29,23 +29,23 @@ require 'header.php';
     </div>
 
     <div class="form-group">
-      <label for="facebooklinkId">Facebook</label>
-      <input type="text" class="form-control" id="facebookLinkId" name="facebook_link_id" placeholder="Facebook Link">
+      <label for="facebookLink">Facebook</label>
+      <input type="text" class="form-control" id="facebookLink" name="facebook_link" placeholder="Facebook Link">
     </div>
 
     <div class="form-group">
-      <label for="twitterLinkId">Twitter</label>
-      <input type="url" class="form-control" id="twitterLinkId" name="twitter_link_id" placeholder="Twitter Link">
+      <label for="twitterLink">Twitter</label>
+      <input type="url" class="form-control" id="twitterLink" name="twitter_link" placeholder="Twitter Link">
     </div>
 
     <div class="form-group">
-      <label for="linkedinLinkId">Linkedin</label>
-      <input type="url" class="form-control" id="linkedinLinkId" name="linkedin_link_id" placeholder="Linkedin Link">
+      <label for="linkedinLink">Linkedin</label>
+      <input type="url" class="form-control" id="linkedinLink" name="linkedin_link" placeholder="Linkedin Link">
     </div>
 
     <div class="form-group">
-      <label for="instagranLinkId">Instagram Link</label>
-      <input type="url" class="form-control" id="instagramLinkId" name="instagran_link_id" placeholder="Instagram Link">
+      <label for="instagranLink">Instagram Link</label>
+      <input type="url" class="form-control" id="instagramLink" name="instagram_link" placeholder="Instagram Link">
       <small id="emailHelp" class="form-text text-muted">We'll never share your personal information with
         anyone else.</small>
     </div>

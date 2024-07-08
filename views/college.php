@@ -29,7 +29,9 @@ $college -> get('college', function() {
                 "email" => $row["email"],
                 "mission" => $row["mission"],
                 "vission" => $row["vission"],
-                "program_educational_objectives" => $row["program_educational_objectives"]
+                "program_educational_objectives" => $row["program_educational_objectives"],
+                "date_added" => $row["date_added"],
+                "date_updated" => $row["date_updated"]
             );
         }
 

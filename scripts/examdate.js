@@ -2,26 +2,25 @@ import { createTable } from './generate-table.js';
 import { makeToastNotification } from './helper.js';
 import { fetchData } from './views-fetcher.js';
 
-
-const createStudentToggle = document.getElementById('create-new-dateTaken-button');
+const createStudentToggle = document.getElementById(
+  'create-new-dateTaken-button'
+);
 const newStudentForm = document.getElementById('new-datetaken-form');
 
 createStudentToggle.onclick = () => newStudentForm.classList.toggle('active');
 
-newStudentForm.onsubmit = event => {
+newStudentForm.onsubmit = (event) => {
   event.preventDefault();
 
   const formData = {
     date_taken: document.getElementById('dateTaken').value,
-  
   };
 
   console.log(formData);
 
   formData.append('date_taken', formValues['date_taken']);
 
-
-  fetch('views/examdate/create.php', {
+  fetch('views/examdate.php/create', {
     method: 'POST',
     body: formData,
   })
@@ -37,9 +36,9 @@ newStudentForm.onsubmit = event => {
       }
     })
     .catch((error) => console.error('Error:', error));
-}
+};
 
 createTable(
-  await fetchData('views/examdate/table_headers.php'),
-  await fetchData('views/examdate/examdates.php')
+  await fetchData('views/table_headers.php?table=examdate'),
+  await fetchData('views/examdate.php/examdates')
 );

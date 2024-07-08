@@ -62,20 +62,20 @@ $admin -> post('create', function($data) {
         $errorMessages[] = 'First name should not exceed 255 characters';
     }
 
-    if (!empty($birthdate) && strlen($birthdate) > 2) {
-        $errorMessages[] = 'birthdate should not exceed 255 characters';
+    if (empty($birthdate)) {
+        $errorMessages[] = 'Birthdate is required';
     }
 
     if (empty($email)) {
-        $errorMessages[] = 'email is required';
+        $errorMessages[] = 'Email is required';
     }
 
     if (strlen($email) > 255) {
-        $errorMessages[] = 'email should not exceed 255 characters';
+        $errorMessages[] = 'Email should not exceed 255 characters';
     }
 
     if (empty($password)) {
-        $errorMessages[] = 'enter your password';
+        $errorMessages[] = 'Password is required';
     }
 
     if (!empty($errorMessages)) {

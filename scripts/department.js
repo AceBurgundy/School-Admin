@@ -32,7 +32,7 @@ newStudentForm.onsubmit = (event) => {
   formData.append('program_educational_objectives', formValues['program_educational_objectives']);
   formData.append('college_id', formValues['college_id']);
 
-  fetch('views/department/create.php', {
+  fetch('views/department.php/create', {
     method: 'POST',
     body: formData,
   })
@@ -51,6 +51,6 @@ newStudentForm.onsubmit = (event) => {
 };
 
 createTable(
-  await fetchData('views/department/table_headers.php'),
-  await fetchData('views/department/departments.php')
+  await fetchData('views/table_headers.php?table=department'),
+  await fetchData('views/department.php/departments')
 );

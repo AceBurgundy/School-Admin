@@ -1,4 +1,6 @@
+import { createTable } from './generate-table.js';
 import { makeToastNotification } from './helper.js';
+import { fetchData } from './views-fetcher.js';
 
 
 
@@ -43,6 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   }
 });
+
+createTable(
+  await fetchData("views/table_headers.php?table=goal"),
+  await fetchData("views/goal_and_objective.php/goal_and_objectives")
+);
 
 
 

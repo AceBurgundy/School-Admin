@@ -12,17 +12,8 @@ createStudentToggle.onclick = () => newexamdateForm.classList.toggle('active');
 newexamdateForm.onsubmit = (event) => {
   event.preventDefault();
 
-  const formValues = {
-    date_taken: document.getElementById('dateTaken').value
-  };
-
-
-
   const formData = new FormData();
-
-  
-  formData.append('date_taken', formValues['date_taken']);
-  console.log(formData);
+  formData.append('date_taken', document.getElementById('dateTaken').value);
 
   fetch('views/examdate.php/create', {
     method: 'POST',

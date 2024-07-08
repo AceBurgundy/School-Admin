@@ -46,16 +46,12 @@ $examdate->get('examdates', function () {
 });
 
 $examdate->post('create', function ($data) {
-    $id = $data['id'];
-    $date_taken = $data['date_taken'];
-    $date_added = $data['date_added'];
-    $date_updated = $data['date_updated'];
+    $date_taken = $_POST['date_taken'];
 
     $errorMessages = array();
 
-    // Validation checks
     if (empty($date_taken)) {
-        $errorMessages[] = $data['date_taken'];
+        $errorMessages[] = 'Date taken is required';
     }
 
     if (!empty($errorMessages)) {
@@ -65,11 +61,11 @@ $examdate->post('create', function ($data) {
 
     // Prepare and execute the INSERT statement
     $statement = Route::$conn->prepare(
-        "INSERT INTO examdate (id, date_taken, date_added , date_updated)
-         VALUES (?, ? ,?, ?)"
+        "INSERT INTO examdate (date_taken)
+         VALUES (?)"
     );
 
-    $statement->bind_param("isss", $id, $date_taken, $date_added, $date_updated);
+    $statement->bind_param("s", $date_taken);
 
     if ($statement->execute()) {
         Route::respondSuccess('Admin record has been created successfully');

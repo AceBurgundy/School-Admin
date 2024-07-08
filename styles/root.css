@@ -70,3 +70,7 @@ body > section > table {
     width: 100%;
     overflow: scroll;
 }
+
+.hidden {
+    display: none;
+}

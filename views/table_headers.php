@@ -13,8 +13,8 @@ try {
 
     $conn = new mysqli($host, $username, $password, $database);
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    if ($conn -> connect_error) {
+        die("Connection failed: " . $conn -> connect_error);
     }
 
     // Get the table name from the query parameter
@@ -49,31 +49,31 @@ try {
     }
 
     $sql = "SHOW COLUMNS FROM $table";
-    $statement = $conn->prepare($sql);
+    $statement = $conn -> prepare($sql);
 
     if (!$statement) {
-        throw new Exception("Database prepare failed: " . $conn->error);
+        throw new Exception("Database prepare failed: " . $conn -> error);
     }
 
-    $statement->execute();
-    $result = $statement->get_result();
+    $statement -> execute();
+    $result = $statement -> get_result();
 
     $attributes = array();
 
-    while ($row = $result->fetch_assoc()) {
+    while ($row = $result -> fetch_assoc()) {
         $attributes[] = $row["Field"];
     }
 
     header('Content-Type: application/json');
     echo json_encode($attributes);
 
-    $statement->close();
-    $conn->close();
+    $statement -> close();
+    $conn -> close();
 
 } catch (Exception $error) {
     http_response_code(500);
     header('Content-Type: application/json');
-    echo json_encode(array("error" => $error->getMessage()));
+    echo json_encode(array("error" => $error -> getMessage()));
 }
 
 ?>

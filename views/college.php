@@ -4,21 +4,21 @@ require_once './Route.php';
 
 $college = new Route();
 
-$college->get('colleges', function() {
+$college -> get('colleges', function() {
     try {
         $sql = "SELECT * FROM college";
-        $statement = Route::$conn->prepare($sql);
+        $statement = Route::$conn -> prepare($sql);
 
         if (!$statement) {
-            throw new Exception("Database prepare failed: " . Route::$conn->error);
+            throw new Exception("Database prepare failed: " . Route::$conn -> error);
         }
 
-        $statement->execute();
-        $result = $statement->get_result();
+        $statement -> execute();
+        $result = $statement -> get_result();
 
         $collegeData = array();
 
-        while ($row = $result->fetch_assoc()) {
+        while ($row = $result -> fetch_assoc()) {
             $collegeData[] = array(
                 "id" => $row["id"],
                 "name" => $row["name"],
@@ -36,7 +36,7 @@ $college->get('colleges', function() {
         header('Content-Type: application/json');
         Route::echoJSON($collegeData);
 
-        $statement->close();
+        $statement -> close();
 
     } catch (Exception $error) {
         http_response_code(500);
@@ -45,7 +45,7 @@ $college->get('colleges', function() {
     }
 });
 
-$college->post('create', function($data) {
+$college -> post('create', function($data) {
     $name = $_POST['name'];
     $banner_file_path = $_POST['banner_file_path'];
     $logo_file_path = $_POST['logo_file_path'];
@@ -91,7 +91,7 @@ $college->post('create', function($data) {
     $statement -> close();
 });
 
-$college->post('update', function($data) {
+$college -> post('update', function($data) {
     $name = $_POST['name'];
     $banner_file_path = $_POST['banner_file_path'];
     $logo_file_path = $_POST['logo_file_path'];
@@ -138,7 +138,7 @@ $college->post('update', function($data) {
     $statement -> close();
 });
 
-$college->post('delete', function($data) {
+$college -> post('delete', function($data) {
     $collegeId = $_POST['collegeId'];
 
     $errorMessages = array();

@@ -4,7 +4,7 @@ require_once './Route.php';
 
 $admin = new Route();
 
-$admin->get('admins', function() {
+$admin -> get('admins', function() {
     // Error reporting
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -45,7 +45,7 @@ $admin->get('admins', function() {
     }
 });
 
-$admin->post('create', function($data) {
+$admin -> post('create', function($data) {
     $username = $_POST['username'];
     $birthdate = $_POST['birthdate'];
     $email = $_POST['email'];
@@ -98,7 +98,7 @@ $admin->post('create', function($data) {
     $statement -> close();
 });
 
-$admin->post('update', function($data) {
+$admin -> post('update', function($data) {
     $adminId = $data['id'];
     $username = $data['username'];
     $birthdate = $data['birthdate'];
@@ -150,7 +150,7 @@ $admin->post('update', function($data) {
     $statement -> close();
 });
 
-$admin->post('delete', function($data) {
+$admin -> post('delete', function($data) {
     $adminId = $data['adminId'];
     $errorMessages = [];
 
@@ -163,16 +163,16 @@ $admin->post('delete', function($data) {
         return;
     }
 
-    $statement = Route::$conn->prepare("DELETE FROM admin WHERE id = ?");
-    $statement->bind_param("i", $adminId);
+    $statement = Route::$conn -> prepare("DELETE FROM admin WHERE id = ?");
+    $statement -> bind_param("i", $adminId);
 
-    if ($statement->execute()) {
+    if ($statement -> execute()) {
         Route::respondSuccess('Admin record has been deleted successfully');
     } else {
         Route::respondError('Failed to delete admin record');
     }
 
-    $statement->close();
+    $statement -> close();
 });
 
 Route::handleRequest();

@@ -4,21 +4,21 @@ require_once './Route.php';
 
 $school = new Route();
 
-$school->get('school', function() {
+$school -> get('school', function() {
     try {
         $sql = "SELECT * FROM school";
-        $statement = Route::$conn->prepare($sql);
+        $statement = Route::$conn -> prepare($sql);
 
         if (!$statement) {
-            throw new Exception("Database prepare failed: " . Route::$conn->error);
+            throw new Exception("Database prepare failed: " . Route::$conn -> error);
         }
 
-        $statement->execute();
-        $result = $statement->get_result();
+        $statement -> execute();
+        $result = $statement -> get_result();
 
         $courseData = array();
 
-        while ($row = $result->fetch_assoc()) {
+        while ($row = $result -> fetch_assoc()) {
             $courseData[] = array(
                 "id" => $row["id"],
                 "title" => $row["title"],
@@ -34,7 +34,7 @@ $school->get('school', function() {
         header('Content-Type: application/json');
         Route::echoJSON($courseData);
 
-        $statement->close();
+        $statement -> close();
 
     } catch (Exception $error) {
         http_response_code(500);
@@ -43,7 +43,7 @@ $school->get('school', function() {
     }
 });
 
-$school->post('create', function($data) {
+$school -> post('create', function($data) {
     $title= $_POST['title'];
     $image_path= $_POST['image_path'];
     $venue= $_POST['venue'];
@@ -69,7 +69,7 @@ $school->post('create', function($data) {
     $statement -> close();
 });
 
-$school->post('update', function($data) {
+$school -> post('update', function($data) {
     $title= $_POST['title'];
     $image_path= $_POST['image_path'];
     $venue= $_POST['venue'];
@@ -95,7 +95,7 @@ $school->post('update', function($data) {
     $statement -> close();
 });
 
-$school->post('delete', function($data) {
+$school -> post('delete', function($data) {
     $news_id = $_POST['id'];
 
     $errorMessages = array();

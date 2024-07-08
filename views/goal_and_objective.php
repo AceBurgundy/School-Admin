@@ -4,22 +4,22 @@ require_once './Route.php';
 
 $goal_and_objective = new Route();
 
-$goal_and_objective->get('goal_and_objectives', function() {
+$goal_and_objective -> get('goal_and_objectives', function() {
     try {
         $sql = "SELECT * FROM goal_and_objective";
 
-        $statement = Route::$conn->prepare($sql);
+        $statement = Route::$conn -> prepare($sql);
 
         if (!$statement) {
-            throw new Exception("Database prepare failed: " . Route::$conn->error);
+            throw new Exception("Database prepare failed: " . Route::$conn -> error);
         }
 
-        $statement->execute();
-        $result = $statement->get_result();
+        $statement -> execute();
+        $result = $statement -> get_result();
 
         $courseData = array();
 
-        while ($row = $result->fetch_assoc()) {
+        while ($row = $result -> fetch_assoc()) {
             $courseData[] = array(
                 "id" => $row["id"],
                 "text" => $row["text"],
@@ -34,7 +34,7 @@ $goal_and_objective->get('goal_and_objectives', function() {
         header('Content-Type: application/json');
         Route::echoJSON($courseData);
 
-        $statement->close();
+        $statement -> close();
 
     } catch (Exception $error) {
         http_response_code(500);
@@ -43,7 +43,7 @@ $goal_and_objective->get('goal_and_objectives', function() {
     }
 });
 
-$goal_and_objective->post('create', function($data) {
+$goal_and_objective -> post('create', function($data) {
     $text= $_POST['text'];
     $college_id = $_POST['college_id'];
     $department_id = $_POST['department_id'];
@@ -67,7 +67,7 @@ $goal_and_objective->post('create', function($data) {
     $statement -> close();
 });
 
-$goal_and_objective->post('update', function($data) {
+$goal_and_objective -> post('update', function($data) {
     $goal_and_objective_id = $_POST['goal_and_objective_id'];
     $text = $_POST['text'];
     $college_id = $_POST['college_id'];
@@ -111,7 +111,7 @@ $goal_and_objective->post('update', function($data) {
     $statement -> close();
 });
 
-$goal_and_objective->post('delete', function($data) {
+$goal_and_objective -> post('delete', function($data) {
     $goal_and_objective_id = $_POST['$goal_and_objective_id'];
 
     $errorMessages = array();

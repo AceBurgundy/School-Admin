@@ -4,54 +4,54 @@ require_once './Route.php';
 
 $scholarship = new Route();
 
-$scholarship->get('scholarships', function() {
+$scholarship -> get('scholarships', function() {
     try {
-    
+
         $sql = "SELECT * FROM scholarship";
-        $statement = Route::$conn->prepare($sql);
-    
+        $statement = Route::$conn -> prepare($sql);
+
         if (!$statement) {
-            throw new Exception("Database prepare failed: " . Route::$conn->error);
+            throw new Exception("Database prepare failed: " . Route::$conn -> error);
         }
-    
-        $statement->execute();
-        $result = $statement->get_result();
-    
+
+        $statement -> execute();
+        $result = $statement -> get_result();
+
         $courseData = array();
-    
-        while ($row = $result->fetch_assoc()) {
+
+        while ($row = $result -> fetch_assoc()) {
             $courseData[] = array(
                 "name" => $row["name"],
                 "date_added" => $row["date_added"],
                 "date_updated" => $row["date_updated"],
-                
+
             );
         }
-    
+
         header('Content-Type: application/json');
         Route::echoJSON($courseData);
-    
-        $statement->close();
-    
+
+        $statement -> close();
+
     } catch (Exception $error) {
         http_response_code(500);
         header('Content-Type: application/json');
         Route::echoJSON(array("error" => $error -> getMessage()));
     }
-    
+
 });
 
-$scholarship->post('create', function($data) {
-    
+$scholarship -> post('create', function($data) {
+
     $name = $_POST['name'];
 
-    $errorMessages = array();    
+    $errorMessages = array();
 
     // Validation checks
     if (empty($name)) {
         $errorMessages[] = 'Name is required';
     }
-    
+
     if (!empty($errorMessages)) {
         Route::respondError($errorMessages);
         return;
@@ -61,9 +61,9 @@ $scholarship->post('create', function($data) {
     "INSERT INTO scholarship (name)
      VALUES (?)"
     );
-    
-    $statement->bind_param("s", $name);
-    
+
+    $statement -> bind_param("s", $name);
+
     if ($statement -> execute()) {
         Route::respondSuccess('scholarship record has been created successfully');
     } else {
@@ -71,10 +71,10 @@ $scholarship->post('create', function($data) {
     }
 
     $statement -> close();
-    
+
 });
 
-$scholarship->post('update', function($data) {
+$scholarship -> post('update', function($data) {
     $student_id = $_POST['student_id'];
     $first_name = $_POST['first_name'];
     $middle_initial = $_POST['middle_initial'];
@@ -126,41 +126,41 @@ $scholarship->post('update', function($data) {
         Route::respondError('Failed to create Course scholarship record');
     }
 
-    $statement -> close();   
+    $statement -> close();
 });
 
-$scholarship->post('delete', function($data) {
+$scholarship -> post('delete', function($data) {
 
-    
+
     $student_id = $_POST['student_id'];
 
     $errorMessages = array();
-    
+
     // Validation checks
     if (empty($student_id)) {
         $errorMessages[] = 'Student ID is required';
     }
 
-    
+
     if (!empty($errorMessages)) {
         Route::respondError($errorMessages);
         return;
     }
-    
+
     // Prepare and execute the INSERT statement
     $statement = Route::$conn -> prepare(
         "DELETE FROM student
          WHERE id = ?"
     );
-    
+
     $statement -> bind_param("i", $student_id);
-    
+
     if ($statement -> execute()) {
         Route::respondSuccess('Scholarship record has been created successfully');
     } else {
         Route::respondError('Failed to create COurse Scholarship record');
     }
-    
+
     $statement -> close();
 });
 

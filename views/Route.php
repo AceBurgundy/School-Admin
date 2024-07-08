@@ -12,19 +12,19 @@ class Route {
 
         self::$conn = new mysqli($host, $username, $password, $database);
 
-        if (self::$conn->connect_error) {
-            die("Connection failed: " . self::$conn->connect_error);
+        if (self::$conn -> connect_error) {
+            die("Connection failed: " . self::$conn -> connect_error);
         }
     }
 
     public static function disconnectDB() {
         try {
-            if (self::$conn && self::$conn->ping()) {
-                self::$conn->close();
+            if (self::$conn && self::$conn -> ping()) {
+                self::$conn -> close();
             }
         } catch (Exception $error) {
             // Handle any errors or log them as needed
-            error_log('Error disconnecting from database. One reason is you mightve closed the connection in a route: ' . $error->getMessage());
+            error_log('Error disconnecting from database. One reason is you mightve closed the connection in a route: ' . $error -> getMessage());
         }
     }
 

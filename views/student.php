@@ -4,22 +4,22 @@ require_once './Route.php';
 
 $student = new Route();
 
-$student->get('student', function() {
+$student -> get('student', function() {
     try {
         $sql = "SELECT * FROM student";
 
-        $statement = Route::$conn->prepare($sql);
+        $statement = Route::$conn -> prepare($sql);
 
         if (!$statement) {
-            throw new Exception("Database prepare failed: " . Route::$conn->error);
+            throw new Exception("Database prepare failed: " . Route::$conn -> error);
         }
 
-        $statement->execute();
-        $result = $statement->get_result();
+        $statement -> execute();
+        $result = $statement -> get_result();
 
         $courseData = array();
 
-        while ($row = $result->fetch_assoc()) {
+        while ($row = $result -> fetch_assoc()) {
             $courseData[] = array(
                 "id" => $row["id"],
                 "first_name" => $row["first_name"],
@@ -37,7 +37,7 @@ $student->get('student', function() {
         header('Content-Type: application/json');
         Route::echoJSON($courseData);
 
-        $statement->close();
+        $statement -> close();
 
     } catch (Exception $error) {
         http_response_code(500);
@@ -46,7 +46,7 @@ $student->get('student', function() {
     }
 });
 
-$student->post('create', function($data) {
+$student -> post('create', function($data) {
     $first_name = $_POST['first_name'];
     $middle_initial = $_POST['middle_initial'];
     $last_name = $_POST['last_name'];
@@ -104,7 +104,7 @@ $student->post('create', function($data) {
     $statement -> close();
 });
 
-$student->post('update', function($data) {
+$student -> post('update', function($data) {
     $student_id = $_POST['student_id'];
     $first_name = $_POST['first_name'];
     $middle_initial = $_POST['middle_initial'];
@@ -164,7 +164,7 @@ $student->post('update', function($data) {
     $statement -> close();
 });
 
-$school->post('delete', function($data) {
+$school -> post('delete', function($data) {
     $student_id = $_POST['id'];
 
     $errorMessages = array();

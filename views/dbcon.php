@@ -1,7 +1,7 @@
 <?php
     $conn = mysqli_connect('localhost','root','','rmmcdatabase') or die(mysqli_error($conn));
 
-    if ($conn->connect_error) {
+    if ($conn -> connect_error) {
         $response = array(
             'status' => 'error',
             'message' => 'Failed to connect to the database'

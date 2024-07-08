@@ -4,22 +4,22 @@ require_once './Route.php';
 
 $coursereview = new Route();
 
-$coursereview->get('coursereviews', function() {
+$coursereview -> get('coursereviews', function() {
     try {
         $sql = "SELECT * FROM coursereview";
 
-        $statement = Route::$conn->prepare($sql);
+        $statement = Route::$conn -> prepare($sql);
 
         if (!$statement) {
-            throw new Exception("Database prepare failed: " . Route::$conn->error);
+            throw new Exception("Database prepare failed: " . Route::$conn -> error);
         }
 
-        $statement->execute();
-        $result = $statement->get_result();
+        $statement -> execute();
+        $result = $statement -> get_result();
 
         $courseData = array();
 
-        while ($row = $result->fetch_assoc()) {
+        while ($row = $result -> fetch_assoc()) {
             $courseData[] = array(
                 "name" => $row["name"],
                 "review" => $row["review"],
@@ -31,7 +31,7 @@ $coursereview->get('coursereviews', function() {
         header('Content-Type: application/json');
         Route::echoJSON($courseData);
 
-        $statement->close();
+        $statement -> close();
 
     } catch (Exception $error) {
         http_response_code(500);
@@ -40,7 +40,7 @@ $coursereview->get('coursereviews', function() {
     }
 });
 
-$coursereview->post('create', function($data) {
+$coursereview -> post('create', function($data) {
     $name = $_POST['input_name'];
     $review = $_POST['course_review'];
     $rating = $_POST['course_rating'];
@@ -87,7 +87,7 @@ $coursereview->post('create', function($data) {
     $statement -> close();
 });
 
-$coursereview->post('update', function($data) {
+$coursereview -> post('update', function($data) {
     $name = $_POST['input_name'];
     $review = $_POST['course_review'];
     $rating = $_POST['course_rating'];
@@ -135,7 +135,7 @@ $coursereview->post('update', function($data) {
     $statement -> close();
 });
 
-$coursereview->post('delete', function($data) {
+$coursereview -> post('delete', function($data) {
     $id = $_POST['id'];
 
     $errorMessages = array();

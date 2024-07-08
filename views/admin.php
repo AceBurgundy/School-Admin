@@ -5,8 +5,6 @@ require_once './Route.php';
 $admin = new Route();
 
 $admin->get('admins', function() {
-    Route::connectDB();
-
     // Error reporting
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -48,8 +46,6 @@ $admin->get('admins', function() {
 });
 
 $admin->post('create', function($data) {
-    Route::connectDB();
-
     $username = $_POST['username'];
     $birthdate = $_POST['birthdate'];
     $email = $_POST['email'];
@@ -103,8 +99,6 @@ $admin->post('create', function($data) {
 });
 
 $admin->post('update', function($data) {
-    Route::connectDB();
-
     $adminId = $data['id'];
     $username = $data['username'];
     $birthdate = $data['birthdate'];
@@ -157,12 +151,9 @@ $admin->post('update', function($data) {
 });
 
 $admin->post('delete', function($data) {
-    Route::connectDB();
-
     $adminId = $data['adminId'];
     $errorMessages = [];
 
-    // Validation checks
     if (empty($adminId)) {
         $errorMessages[] = 'Admin ID is required';
     }
@@ -182,7 +173,6 @@ $admin->post('delete', function($data) {
     }
 
     $statement->close();
-    Route::disconnectDB();
 });
 
 Route::handleRequest();

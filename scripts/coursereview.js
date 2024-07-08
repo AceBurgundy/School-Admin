@@ -24,7 +24,7 @@ newCourseReviewForm.onsubmit = event => {
   formData.append("course_rating", formValues['rating']);
   formData.append("course_id", formValues['course_id']);
 
-  fetch("views/coursereview/create.php", {
+  fetch("views/coursereview.php/create", {
     method: "POST",
     body: formData,
   })
@@ -44,5 +44,5 @@ newCourseReviewForm.onsubmit = event => {
 
 createTable(
   await fetchData("views/table_headers.php?table=coursereview"),
-  await fetchData("views/coursereview/coursereviews.php")
+  await fetchData("views/coursereview.php/coursereviews")
 );

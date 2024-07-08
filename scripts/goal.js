@@ -27,7 +27,7 @@ newGoalObjectiveForm.onsubmit = event => {
     // department_id: "2"
     // text: "To protect and improve students learning efficiency."
 
-  fetch("views/goal/create.php", {
+  fetch("views/goal.php/create", {
     method: "POST",
     body: formData,
   })
@@ -47,7 +47,7 @@ newGoalObjectiveForm.onsubmit = event => {
 
 createTable(
   await fetchData("views/table_headers.php?table=goal"),
-  await fetchData("views/goal/goals.php")
+  await fetchData("views/goal.php/goals")
 );
 
 

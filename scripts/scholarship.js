@@ -14,13 +14,13 @@ newNewsAuthorForm.onsubmit = event => {
   };
 
   const formData = new FormData();
-  
+
   formData.append("name", formValues['name']);
-  
-  fetch("views/scholarship/create.php", {
+
+  fetch("views/scholarship.php/create", {
     method: "POST",
     body: formData,
-    
+
   })
     .then(response => response.json())
     .then(data => {
@@ -31,7 +31,7 @@ newNewsAuthorForm.onsubmit = event => {
 
       if (data.status === "success") {
         makeToastNotification(data.message);
-        
+
         // leave empty
       }
     })

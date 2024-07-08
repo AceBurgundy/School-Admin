@@ -23,7 +23,7 @@ newCollegeForm.onsubmit = event => {
   };
 
   const formData = new FormData();
-  
+
   formData.append("name", formValues["name"]);
   formData.append("banner_file_path", formValues["banner_file_path"]);
   formData.append("logo_file_path", formValues["logo_file_path"]);
@@ -34,7 +34,7 @@ newCollegeForm.onsubmit = event => {
   formData.append("vission", formValues["vission"]);
   formData.append("program_educational_objectives", formValues["program_educational_objectives"]);
 
-  fetch("views/college/create.php", {
+  fetch("views/college.php/create", {
     method: "POST",
     body: formData,
   })
@@ -53,5 +53,5 @@ newCollegeForm.onsubmit = event => {
 };
 createTable(
   await fetchData("views/college/table_headers.php"),
-  await fetchData("views/college/college.php")
+  await fetchData("views/college.php/colleges")
 );

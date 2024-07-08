@@ -52,5 +52,5 @@ newScholarshipForm.onsubmit = event => {
 
 createTable(
   await fetchData("views/table_headers.php?table=student"),
-  await fetchData("views/student/students.php")
+  await fetchData("views/student.php/students")
 );

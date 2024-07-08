@@ -44,5 +44,5 @@ newCourseReviewForm.onsubmit = event => {
 
 createTable(
   await fetchData("views/table_headers.php?table=coursereview"),
-  await fetchData("views/coursereview/coursereviews.php")
+  await fetchData("views/coursereview.php/coursereviews")
 );

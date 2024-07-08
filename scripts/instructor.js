@@ -76,5 +76,5 @@ newInstructorForm.onsubmit = event => {
 
 createTable(
   await fetchData("views/table_headers.php?table=student"),
-  await fetchData("views/instructor/instructor.php")
+  await fetchData("views/instructor.php/instructor")
 );

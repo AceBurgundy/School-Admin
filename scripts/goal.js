@@ -47,7 +47,7 @@ newGoalObjectiveForm.onsubmit = event => {
 
 createTable(
   await fetchData("views/table_headers.php?table=goal"),
-  await fetchData("views/goal/goals.php")
+  await fetchData("views/goal.php/goals")
 );
 
 

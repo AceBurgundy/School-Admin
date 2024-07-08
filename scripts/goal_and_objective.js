@@ -23,9 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
     formData.append("college_id", formValues['college_id']);
     formData.append("department_id", formValues['department_id']);
 
-
-
-
     fetch("views/goal_and_objective/create.php", {
       method: "POST",
       body: formData,
@@ -42,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     })
     .catch(error => console.error("Error:", error));
-   
+
 
   }
 });

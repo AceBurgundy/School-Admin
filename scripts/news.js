@@ -50,5 +50,5 @@ newNewsForm.onsubmit = event => {
 };
 createTable(
   await fetchData("views/news/table_headers.php"),
-  await fetchData("views/news/newss.php")
+  await fetchData("views/news.php/news")
 );

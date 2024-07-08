@@ -104,8 +104,6 @@ window.onclick = event => {
     const editableInputHolderElementFormSubmitButton = editableInputHolderElement.parentElement.lastElementChild;
 
     // editableInputHolderElementFormSubmitButton.click();
-    const response = confirm("Are you sure?")
-    console.log(response);
     editableInputParent.innerHTML = newData;
   }
 }

@@ -51,15 +51,13 @@ $instructor -> get('instructors', function() {
 $instructor -> post('create', function($data) {
 
     $first_name= $_POST['first_name'];
-    $middle_initial= $_POST['middle_initial'];
+    $middle_name= $_POST['middle_initial'];
     $last_name= $_POST['last_name'];
     $extension= $_POST['extension'];
-    $facebook_link_id= $_POST['facebook_link_id'];
-    $twitter_link_id= $_POST['twitter_link_id'];
-    $linkedin_link_id= $_POST['linkedin_link_id'];
-    $instagran_link_id= $_POST['instagran_link_id'];
-
-    $errorMessages = array();
+    $facebook_link= $_POST['facebook_link'];
+    $twitter_link= $_POST['twitter_link'];
+    $linkedin_link= $_POST['linkedin_link'];
+    $instagram_link= $_POST['instagram_link'];
 
     $errorMessages = array();
 
@@ -94,11 +92,11 @@ $instructor -> post('create', function($data) {
     }
     // Prepare and execute the INSERT statement
     $statement = Route::$conn -> prepare(
-        "INSERT INTO instructor (first_name, middle_initial, last_name, extension, facebook_link_id, twitter_link_id, linkedin_link_id, instagran_link_id)
+        "INSERT INTO instructor (first_name, middle_name, last_name, extension, facebook_link, twitter_link, linkedin_link, instagram_link)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
     );
 
-    $statement -> bind_param("ssssiis", $first_name, $middle_initial, $last_name, $extension, $facebook_link_id, $twitter_link_id, $linkedin_link_id, $instagran_link_id);
+    $statement -> bind_param("ssssssss", $first_name, $middle_name, $last_name, $extension, $facebook_link, $twitter_link, $linkedin_link, $instagram_link);
 
 
     if ($statement -> execute()) {
@@ -113,13 +111,13 @@ $instructor -> post('create', function($data) {
 
 $instructor -> post('update', function($data) {
     $first_name= $_POST['first_name'];
-    $middle_initial= $_POST['middle_initial'];
+    $middle_name= $_POST['middle_initial'];
     $last_name= $_POST['last_name'];
     $extension= $_POST['extension'];
-    $facebook_link_id= $_POST['facebook_link_id'];
-    $twitter_link_id= $_POST['twitter_link_id'];
-    $linkedin_link_id= $_POST['linkedin_link_id'];
-    $instagran_link_id= $_POST['instagran_link_id'];
+    $facebook_link= $_POST['facebook_link'];
+    $twitter_link= $_POST['twitter_link'];
+    $linkedin_link= $_POST['linkedin_link'];
+    $instagram_link= $_POST['instagram_link'];
 
     $errorMessages = array();
 
@@ -156,11 +154,11 @@ $instructor -> post('update', function($data) {
     // Prepare and execute the INSERT statement
     $statement = Route::$conn -> prepare(
         "UPDATE instructor
-         SET first_name = ?, middle_initial = ?, last_name = ?, extension = ?, facebook_link_id = ?, twitter_link_id = ?, linkedin_link_id = ?, instagran_link_id = ?
+         SET first_name = ?, middle_name = ?, last_name = ?, extension = ?, facebook_link = ?, twitter_link = ?, linkedin_link = ?, instagram_link = ?
          WHERE id = ?;"
     );
 
-    $statement -> bind_param("ssssiisi", $first_name, $middle_initial, $last_name, $extension, $facebook_link_id, $twitter_link_id, $linkedin_link_id, $instagran_link_id);
+    $statement -> bind_param("ssssssss", $first_name, $middle_name, $last_name, $extension, $facebook_link, $twitter_link, $linkedin_link, $instagram_link);
 
     if ($statement -> execute()) {
         Route::respondSuccess('Instructor record has been created successfully');

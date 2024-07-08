@@ -6,7 +6,6 @@ $coursecurriculum = new Route();
 
 $coursecurriculum -> get('coursecurriculums', function() {
     try {
-
         $sql = "SELECT * FROM coursecurriculum";
 
         $statement = Route::$conn -> prepare($sql);

@@ -40,7 +40,7 @@ require 'header.php';
 
     <div class="form-group">
       <label for="collegeId">College Id</label>
-      <input type="number" class="form-control" id="College Id" name="college_Id" placeholder="college Id">
+      <input type="number" class="form-control" id="College_Id" name="college_Id" placeholder="college Id">
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>

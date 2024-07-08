@@ -14,6 +14,7 @@ require 'header.php';
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
+
   </form>
 
   <div id="table-container"></div>
@@ -22,3 +23,6 @@ require 'header.php';
 
 </body>
 </html>
+
+
+

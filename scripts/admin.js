@@ -24,7 +24,7 @@ newAdminForm.onsubmit = (event) => {
   formData.append("email", formValues["email"]);
   formData.append("password", formValues["password"]);
 
-  fetch("views/admin/create.php", {
+  fetch("views/admin.php/create", {
     method: "POST",
     body: formData,
   })
@@ -44,5 +44,5 @@ newAdminForm.onsubmit = (event) => {
 
 createTable(
   await fetchData("views/table_headers.php?table=admin"),
-  await fetchData("views/admin/admin.php")
+  await fetchData("views/admin.php/admins")
 );

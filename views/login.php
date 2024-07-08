@@ -14,18 +14,18 @@ if (empty($email) || empty($password)) {
     exit;
 }
 
-$statement = $conn->prepare(
+$statement = $conn -> prepare(
    "SELECT id, email, password, hash
     FROM users
     WHERE email = ? AND password = ?
 ");
 
-$statement->bind_param("ss", $email, $password);
-$statement->execute();
-$result = $statement->get_result();
+$statement -> bind_param("ss", $email, $password);
+$statement -> execute();
+$result = $statement -> get_result();
 
-if ($result->num_rows === 1) {
-    $row = $result->fetch_assoc();
+if ($result -> num_rows === 1) {
+    $row = $result -> fetch_assoc();
 
     if (password_verify($password, $row['password'])) {
 
@@ -53,7 +53,7 @@ if ($result->num_rows === 1) {
     echo json_encode($response);
 }
 
-$statement->close();
-$conn->close();
+$statement -> close();
+$conn -> close();
 
 ?>

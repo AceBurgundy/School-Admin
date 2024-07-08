@@ -7,25 +7,25 @@ require 'header.php';
 
   <form id="new-admin-form">
 
-    <!-- username -->
+    <!-- username - ->
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" class="form-control" id="username" placeholder="UserName">
     </div>
 
-    <!-- birthdate -->
+    <!-- birthdate - ->
     <div class="form-group">
       <label for="birthdate">Date of birth</label>
       <input type="date" class="form-control" id="birthdate" name="birthdate" placeholder="Birth Date" maxlength="255">
     </div>
 
-    <!-- email -->
+    <!-- email - ->
     <div class="form-group">
       <label for="email">Email</label>
       <input type="text" class="form-control" id="email" name="email" placeholder="Email" maxlength="255">
     </div>
 
-    <!-- password -->
+    <!-- password - ->
     <div class="form-group">
       <label for="password">Password</label>
       <input type="text" class="form-control" id="password" name="password" placeholder="Password" maxlength="255" value="rmmc1960*">

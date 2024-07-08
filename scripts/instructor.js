@@ -56,7 +56,7 @@ newInstructorForm.onsubmit = event => {
   formData.append("instagran_link_id", formValues['instagran_link_id']);
 
 
-  fetch("views/instructor/create.php", {
+  fetch("views/instructor.php/create", {
     method: "POST",
     body: formData,
 })
@@ -76,5 +76,5 @@ newInstructorForm.onsubmit = event => {
 
 createTable(
   await fetchData("views/table_headers.php?table=student"),
-  await fetchData("views/instructor/instructor.php")
+  await fetchData("views/instructor.php/instructor")
 );

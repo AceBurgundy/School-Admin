@@ -1,4 +1,4 @@
-<!-- header.php -->
+<!-- header.php - ->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link rel="stylesheet" href="./assets/dist/css/bootstrap.min.css">
 
-    <!-- rmmc title icon -->
+    <!-- rmmc title icon - ->
     <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
@@ -68,6 +68,10 @@
         <link rel="stylesheet" href="./styles/examdate.css">
         <script type="module" src="./scripts/examdate.js"></script>
         <title>Exam Date</title>
+    <?php elseif ($page == 'goal') : ?>
+        <link rel="stylesheet" href="./styles/goal.css">
+        <script type="module" src="./scripts/goal.js"></script>
+        <title>Goal</title>
     <?php elseif ($page == 'goal_and_objective') : ?>
         <link rel="stylesheet" href="./styles/goal_and_objective.css">
         <script type="module" src="./scripts/goal_and_objective.js"></script>

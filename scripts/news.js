@@ -31,7 +31,7 @@ newNewsForm.onsubmit = event => {
   formData.append("event_link", formValues["event_link"]);
 
 
-  fetch("views/news/create.php", {
+  fetch("views/news.php/create", {
     method: "POST",
     body: formData,
   })
@@ -50,5 +50,5 @@ newNewsForm.onsubmit = event => {
 };
 createTable(
   await fetchData("views/news/table_headers.php"),
-  await fetchData("views/news/newss.php")
+  await fetchData("views/news.php/news")
 );

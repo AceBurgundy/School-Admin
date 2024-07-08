@@ -111,9 +111,9 @@ $coursecurriculum -> post('update', function($data) {
     $statement -> bind_param("si", $text, $course_id);
 
     if ($statement -> execute()) {
-        Route::respondSuccess('Course curriculum record has been created successfully');
+        Route::respondSuccess('Course curriculum record has been updated successfully');
     } else {
-        Route::respondError('Failed to create course curriculum record');
+        Route::respondError('Failed to update course curriculum record');
     }
 
     $statement -> close();
@@ -144,9 +144,9 @@ $coursecurriculum -> post('delete', function($data) {
     $statement -> bind_param("i", $id);
 
     if ($statement -> execute()) {
-        Route::respondSuccess('Course curriculum record has been created successfully');
+        Route::respondSuccess('Course curriculum record has been deleted successfully');
     } else {
-        Route::respondError('Failed to create course curriculum record');
+        Route::respondError('Failed to delete course curriculum record');
     }
 
     $statement -> close();

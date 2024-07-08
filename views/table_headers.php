@@ -76,4 +76,3 @@ try {
     echo json_encode(array("error" => $error -> getMessage()));
 }
 
-?>

@@ -51,7 +51,9 @@ newCollegeForm.onsubmit = event => {
     })
     .catch((error) => console.error("Error:", error));
 };
+
 createTable(
-  await fetchData("views/college/table_headers.php"),
-  await fetchData("views/college.php/colleges")
+  await fetchData("views/table_headers.php?table=college"),
+  await fetchData("views/college.php/college")
 );
+

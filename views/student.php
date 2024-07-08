@@ -4,7 +4,7 @@ require_once './Route.php';
 
 $student = new Route();
 
-$student -> get('student', function() {
+$student -> get('students', function() {
     try {
         $sql = "SELECT * FROM student";
 
@@ -164,7 +164,7 @@ $student -> post('update', function($data) {
     $statement -> close();
 });
 
-$school -> post('delete', function($data) {
+$student -> post('delete', function($data) {
     $student_id = $_POST['id'];
 
     $errorMessages = array();

@@ -1,17 +1,19 @@
-
+import { createTable } from './generate-table.js';
 import { makeToastNotification } from './helper.js';
+import { fetchData } from './views-fetcher.js';
 
-const createNewsAuthorButton = document.getElementById('create-new-scholarship-button');
-const newNewsAuthorForm = document.getElementById('new-scholarship-form');
+const createScholarshipButton = document.getElementById('create-new-scholarship-button');
+const newScholarshipForm = document.getElementById('new-scholarship-form');
 
-createNewsAuthorButton.onclick = () => newNewsAuthorForm.classList.toggle('active');
+createScholarshipButton.onclick = () => newScholarshipForm.classList.toggle('active');
 
-newNewsAuthorForm.onsubmit = event => {
+newScholarshipForm.onsubmit = event => {
   event.preventDefault();
 
   const formValues = {
     name: document.getElementById('scholarship').value,
   };
+
 
   const formData = new FormData();
 
@@ -37,3 +39,8 @@ newNewsAuthorForm.onsubmit = event => {
     })
     .catch(error => console.error("Error:", error));
 }
+
+createTable(
+  await fetchData("views/table_headers.php?table=scholarship"),
+  await fetchData("views/scholarship.php/scholarship")
+);

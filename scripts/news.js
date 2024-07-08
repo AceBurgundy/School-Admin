@@ -49,6 +49,6 @@ newNewsForm.onsubmit = event => {
     .catch((error) => console.error("Error:", error));
 };
 createTable(
-  await fetchData("views/news/table_headers.php"),
+  await fetchData("views/table_headers.php?table=news"),
   await fetchData("views/news.php/news")
 );

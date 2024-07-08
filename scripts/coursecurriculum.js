@@ -22,7 +22,7 @@ newCourseCurriculumForm.onsubmit = event => {
   formData.append("input_text", formValues['input_text']);
   formData.append("course_id", formValues['course_id']);
 
-  fetch("views/coursecurriculum/create.php", {
+  fetch("views/coursecurriculum.php/create", {
     method: "POST",
     body: formData,
 })

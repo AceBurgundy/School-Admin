@@ -27,7 +27,7 @@ newGoalObjectiveForm.onsubmit = event => {
     // department_id: "2"
     // text: "To protect and improve students learning efficiency."
 
-  fetch("views/goal/create.php", {
+  fetch("views/goal.php/create", {
     method: "POST",
     body: formData,
   })

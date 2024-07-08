@@ -34,7 +34,7 @@ newCollegeForm.onsubmit = event => {
   formData.append("vission", formValues["vission"]);
   formData.append("program_educational_objectives", formValues["program_educational_objectives"]);
 
-  fetch("views/college/create.php", {
+  fetch("views/college.php/create", {
     method: "POST",
     body: formData,
   })

@@ -32,7 +32,7 @@ newScholarshipForm.onsubmit = event => {
   formData.append("school_id", formValues['school_id']);
   formData.append("scholarship_id", formValues['scholarship_id']);
 
-  fetch("views/student/create.php", {
+  fetch("views/student.php/create", {
       method: "POST",
       body: formData,
   })

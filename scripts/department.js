@@ -3,14 +3,14 @@ import { makeToastNotification } from './helper.js';
 import { fetchData } from './views-fetcher.js';
 
 const createStudentToggle = document.getElementById('create-new-departmentBtn');
-const newStudentForm = document.getElementById('new-department-form');
+const newdepartmentForm = document.getElementById('new-department-form');
 
-createStudentToggle.onclick = () => newStudentForm.classList.toggle('active');
+createStudentToggle.onclick = () => newdepartmentForm.classList.toggle('active');
 
-newStudentForm.onsubmit = (event) => {
+newdepartmentForm.onsubmit = (event) => {
   event.preventDefault();
 
-  const formData = {
+  const formValues = {
     name: document.getElementById('name').value,
     logo_file_path: document.getElementById('logoFilePath').value,
     banner_file_path: document.getElementById('bannerFilePath').value,
@@ -19,9 +19,10 @@ newStudentForm.onsubmit = (event) => {
     program_educational_objectives: document.getElementById(
       'programEducationalObjectives'
     ).value,
-    college_id: document.getElementById('collegeId').value,
+    college_id: document.getElementById('College_Id').value,
   };
 
+  const formData = new FormData();
   console.log(formData);
 
   formData.append('name', formValues['name']);
@@ -29,7 +30,10 @@ newStudentForm.onsubmit = (event) => {
   formData.append('banner_file_path', formValues['banner_file_path']);
   formData.append('mission', formValues['mission']);
   formData.append('vission', formValues['vission']);
-  formData.append('program_educational_objectives', formValues['program_educational_objectives']);
+  formData.append(
+    'program_educational_objectives',
+    formValues['program_educational_objectives']
+  );
   formData.append('college_id', formValues['college_id']);
 
   fetch('views/department.php/create', {

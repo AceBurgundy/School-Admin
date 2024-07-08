@@ -5,37 +5,41 @@ import { fetchData } from './views-fetcher.js';
 const createStudentToggle = document.getElementById(
   'create-new-dateTaken-button'
 );
-const newStudentForm = document.getElementById('new-datetaken-form');
+const newexamdateForm = document.getElementById('new-datetaken-form');
 
-createStudentToggle.onclick = () => newStudentForm.classList.toggle('active');
+createStudentToggle.onclick = () => newexamdateForm.classList.toggle('active');
 
-newStudentForm.onsubmit = (event) => {
+newexamdateForm.onsubmit = (event) => {
   event.preventDefault();
 
-  const formData = {
-    date_taken: document.getElementById('dateTaken').value,
+  const formValues = {
+    date_taken: document.getElementById('dateTaken').value
   };
 
-  console.log(formData);
 
+
+  const formData = new FormData();
+
+  
   formData.append('date_taken', formValues['date_taken']);
+  console.log(formData);
 
   fetch('views/examdate.php/create', {
     method: 'POST',
     body: formData,
   })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.status === 'error') {
-        makeToastNotification(data.message);
-      }
+  .then((response) => response.json())
+  .then((data) => {
+    if (data.status === "error") {
+      makeToastNotification(data.message);
+    }
 
-      if (data.status === 'success') {
-        makeToastNotification(data.message);
-        // leave empty
-      }
-    })
-    .catch((error) => console.error('Error:', error));
+    if (data.status === "success") {
+      makeToastNotification(data.message);
+      // leave empty
+    }
+  })
+  .catch((error) => console.error("Error:", error));
 };
 
 createTable(

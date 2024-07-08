@@ -4,7 +4,7 @@ require_once './Route.php';
 
 $college = new Route();
 
-$college -> get('colleges', function() {
+$college -> get('college', function() {
     try {
         $sql = "SELECT * FROM college";
         $statement = Route::$conn -> prepare($sql);
@@ -29,7 +29,9 @@ $college -> get('colleges', function() {
                 "email" => $row["email"],
                 "mission" => $row["mission"],
                 "vission" => $row["vission"],
-                "program_educational_objectives" => $row["program_educational_objectives"]
+                "program_educational_objectives" => $row["program_educational_objectives"],
+                "date_added" => $row["date_added"],
+                "date_updated" => $row["date_updated"]
             );
         }
 

@@ -4,7 +4,7 @@ require_once './Route.php';
 
 $scholarship = new Route();
 
-$scholarship -> get('scholarships', function() {
+$scholarship -> get('scholarship', function() {
     try {
 
         $sql = "SELECT * FROM scholarship";
@@ -21,10 +21,10 @@ $scholarship -> get('scholarships', function() {
 
         while ($row = $result -> fetch_assoc()) {
             $courseData[] = array(
+                "id" => $row["id"],
                 "name" => $row["name"],
                 "date_added" => $row["date_added"],
                 "date_updated" => $row["date_updated"],
-
             );
         }
 

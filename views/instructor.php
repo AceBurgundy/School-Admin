@@ -94,7 +94,7 @@ $instructor -> post('create', function($data) {
     }
     // Prepare and execute the INSERT statement
     $statement = Route::$conn -> prepare(
-        "INSERT INTO student (first_name, middle_initial, last_name, extension, facebook_link_id, twitter_link_id, linkedin_link_id, instagran_link_id)
+        "INSERT INTO instructor (first_name, middle_initial, last_name, extension, facebook_link_id, twitter_link_id, linkedin_link_id, instagran_link_id)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
     );
 
@@ -155,7 +155,7 @@ $instructor -> post('update', function($data) {
 
     // Prepare and execute the INSERT statement
     $statement = Route::$conn -> prepare(
-        "UPDATE Student
+        "UPDATE instructor
          SET first_name = ?, middle_initial = ?, last_name = ?, extension = ?, facebook_link_id = ?, twitter_link_id = ?, linkedin_link_id = ?, instagran_link_id = ?
          WHERE id = ?;"
     );
